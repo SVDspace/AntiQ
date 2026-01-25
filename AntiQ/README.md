@@ -18,6 +18,7 @@ AntiQ is a web-based virtual queue management system designed for clinics, hospi
 
 ### Admin / Staff Features
 
+
 * Secure admin login
 * Live service dashboard
 * Serve next, skip, pause, and resume controls
