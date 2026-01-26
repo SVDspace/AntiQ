@@ -155,8 +155,15 @@ a {
 }
 
 .footer-logo {
+    max-width: 160px;
+    line-height: 1.5;
     font-size: 1.5rem;
+    display: flex;
+    
+    text-align: center;
 }
+
+
 
 .footer-column ul {
     list-style: none;
@@ -174,8 +181,12 @@ a {
 .footer-bottom {
     border-top: 1px solid var(--color-border);
     text-align: center;
+    width: 100%;
     padding: 15px 0;
     font-size: 0.9rem;
+    
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===== Responsive ===== */
