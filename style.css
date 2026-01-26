@@ -191,3 +191,76 @@ a {
         text-align: center;
     }
 }
+/*login page*/
+.login-wrapper {
+            background-color: #fdfdfd;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .login-card {
+            
+            background: #ffffff;
+            border: 1.5px solid #000000; /* Matching your screenshot's border */
+            border-radius: 40px;        /* High rounding as seen in image */
+            padding: 50px 60px;
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .login-card h2 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+           
+        }
+
+        .login-card .subtitle {
+            font-size: 0.95rem;
+            color: var(--color-text);
+            margin-bottom: 35px;
+            display: block;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 22px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: var(--color-dark);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        /* Override the global .btn for the login button to be dark like the screenshot */
+        .btn-login {
+            width: 100%;
+            background-color: #0a365c !important;
+            color: white !important;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .forgot-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            text-decoration: underline;
+            color: var(--color-text);
+        }
