@@ -204,6 +204,9 @@ a {
     padding-bottom: 30px;
 }
 
+.footer-column p{
+    margin: 0 0 10px;
+}
 .footer-column h3,
 .footer-column h4 {
     color: var(--color-light);
@@ -339,6 +342,7 @@ a {
 }
 
 
+
 /* ===============================
    CHECK STATUS PAGE (Scoped CSS)
    =============================== */
@@ -367,6 +371,7 @@ a {
     text-align: center;
     box-shadow: 0 10px 30px rgba(15, 76, 129, 0.08);
 }
+
 
 /* Heading */
 .check-status-page .card h2 {
