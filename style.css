@@ -337,3 +337,84 @@ a {
     text-decoration: underline;
     color: var(--color-text);
 }
+
+/* ===============================
+   CHECK STATUS PAGE (Scoped CSS)
+   =============================== */
+
+.check-status-page {
+    background-color: var(--color-light);
+}
+
+/* Center main content */
+.check-status-page main {
+    min-height: calc(100vh - 160px); /* navbar + footer space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* Card styling */
+.check-status-page .card {
+    background: var(--color-light);
+    border: 1.5px solid var(--color-border);
+    border-radius: 24px;
+    padding: 45px 50px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(15, 76, 129, 0.08);
+}
+
+/* Heading */
+.check-status-page .card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+/* Sub text */
+.check-status-page .card p {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 30px;
+}
+
+/* Input field */
+.check-status-page .card input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.check-status-page .card button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: var(--color-primary);
+    color: var(--color-light);
+    transition: background 0.3s ease;
+}
+
+.check-status-page .card button:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .check-status-page .card {
+        padding: 35px 25px;
+    }
+
+    .check-status-page .card h2 {
+        font-size: 1.6rem;
+    }
+}
