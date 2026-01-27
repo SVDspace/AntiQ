@@ -204,6 +204,9 @@ a {
     padding-bottom: 30px;
 }
 
+.footer-column p{
+    margin: 0 0 10px;
+}
 .footer-column h3,
 .footer-column h4 {
     color: var(--color-light);
@@ -336,23 +339,6 @@ a {
     font-size: 0.85rem;
     text-decoration: underline;
     color: var(--color-text);
-}
-/* ===== MAIN FEEDBACK SECTION ===== */
-
-main {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-main h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-main p {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: #555;
 }
 
 /* Form Card */
