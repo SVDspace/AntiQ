@@ -1,6 +1,7 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-    --color-primary: #0f4c81;        /* Navy Blue */
+    --color-primary: #0f4c81;
+    /* Navy Blue */
     --color-primary-dark: #0a365c;
     --color-dark: #0b1f33;
     --color-dark-secondary: #132f4c;
@@ -8,8 +9,10 @@
     --color-text: #1f2937;
     --color-muted: #9fb3c8;
     --color-border: #1e3a5f;
-    --toggle-off: #575a5f;  /* Off background */
-    --toggle-on: #0f4c81;   /* On background */
+    --toggle-off: #575a5f;
+    /* Off background */
+    --toggle-on: #0f4c81;
+    /* On background */
     --toggle-circle: #ffffff;
 }
 
@@ -35,7 +38,7 @@ a {
 
 /* ===== Layout ===== */
 .container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: auto;
     padding: 0 20px;
 }
@@ -50,7 +53,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px;
 }
 
 .logo {
@@ -70,10 +73,10 @@ a {
     color: var(--color-light);
 }
 
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:15px;
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .theme-toggle {
@@ -111,13 +114,14 @@ a {
     transition: transform 0.3s ease;
 }
 
-.theme-toggle input:checked + .slider {
+.theme-toggle input:checked+.slider {
     background-color: var(--toggle-on);
 }
 
-.theme-toggle input:checked + .slider::before {
+.theme-toggle input:checked+.slider::before {
     transform: translateX(24px);
 }
+
 /* ===== Hero ===== */
 .hero {
     background: var(--color-primary-dark);
@@ -187,6 +191,7 @@ a {
 
 /* ===== Footer ===== */
 .footer {
+    max-width: 100%;
     background: var(--color-dark);
     color: var(--color-muted);
     padding-top: 50px;
@@ -194,8 +199,8 @@ a {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
     padding-bottom: 30px;
 }
 
@@ -206,15 +211,19 @@ a {
 }
 
 .footer-logo {
-    max-width: 160px;
-    line-height: 1.5;
-    font-size: 1.5rem;
-    display: flex;
-    
-    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-
+.column1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    border-right:1px solid var(--color-border);
+}
 
 .footer-column ul {
     list-style: none;
@@ -235,7 +244,6 @@ a {
     width: 100%;
     padding: 15px 0;
     font-size: 0.9rem;
-    
     justify-content: center;
     align-items: center;
 }
@@ -243,7 +251,7 @@ a {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -253,76 +261,79 @@ a {
         text-align: center;
     }
 }
+
 /*login page*/
 .login-wrapper {
-            background-color: #fdfdfd;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
+    background-color: #fdfdfd;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
-        .login-card {
-            
-            background: #ffffff;
-            border: 1.5px solid #000000; /* Matching your screenshot's border */
-            border-radius: 40px;        /* High rounding as seen in image */
-            padding: 50px 60px;
-            max-width: 480px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.login-card {
 
-        .login-card h2 {
-            font-size: 2.8rem;
-            margin-bottom: 5px;
-           
-        }
+    background: #ffffff;
+    border: 1.5px solid #000000;
+    /* Matching your screenshot's border */
+    border-radius: 40px;
+    /* High rounding as seen in image */
+    padding: 50px 60px;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .login-card .subtitle {
-            font-size: 0.95rem;
-            color: var(--color-text);
-            margin-bottom: 35px;
-            display: block;
-        }
+.login-card h2 {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
 
-        .input-group {
-            text-align: left;
-            margin-bottom: 22px;
-        }
+}
 
-        .input-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 1rem;
-            color: var(--color-dark);
-        }
+.login-card .subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 35px;
+    display: block;
+}
 
-        .input-group input {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-        }
+.input-group {
+    text-align: left;
+    margin-bottom: 22px;
+}
 
-        /* Override the global .btn for the login button to be dark like the screenshot */
-        .btn-login {
-            width: 100%;
-            background-color: #0a365c !important;
-            color: white !important;
-            padding: 14px;
-            border-radius: 10px;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: var(--color-dark);
+}
 
-        .forgot-link {
-            display: block;
-            margin-top: 20px;
-            font-size: 0.85rem;
-            text-decoration: underline;
-            color: var(--color-text);
-        }
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+/* Override the global .btn for the login button to be dark like the screenshot */
+.btn-login {
+    width: 100%;
+    background-color: #0a365c !important;
+    color: white !important;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.forgot-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    color: var(--color-text);
+}
