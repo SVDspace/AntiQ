@@ -270,18 +270,18 @@ a {
     align-items: center;
 }
 
-.login-card {
+/*.login-card {
 
     background: #ffffff;
     border: 1.5px solid #000000;
-    /* Matching your screenshot's border */
+    /* Matching your screenshot's border 
     border-radius: 40px;
-    /* High rounding as seen in image */
+    /* High rounding as seen in image 
     padding: 50px 60px;
     max-width: 480px;
     margin: 0 auto;
     text-align: center;
-}
+}*/
 
 .login-card h2 {
     font-size: 2.8rem;
@@ -336,4 +336,66 @@ a {
     font-size: 0.85rem;
     text-decoration: underline;
     color: var(--color-text);
+}
+/* ===== MAIN FEEDBACK SECTION ===== */
+
+main {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+main h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+main p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Form Card */
+main form {
+    background-color: #ffffff;
+    width: 480px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+/* Labels */
+main label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Inputs and textarea */
+main input,
+main textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Submit button */
+main button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0a365c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+main button:hover {
+    background-color: #444;
 }
