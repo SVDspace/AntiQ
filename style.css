@@ -422,3 +422,179 @@ a {
         font-size: 1.6rem;
     }
 }
+
+
+/* ===== Executive Navy Color Theme ===== */
+:root {
+    --color-primary: #0f4c81;        /* Navy Blue */
+    --color-primary-dark: #0a365c;
+    --color-dark: #0b1f33;
+    --color-dark-secondary: #132f4c;
+    --color-light: #ffffff;
+    --color-text: #1f2937;
+    --color-muted: #9fb3c8;
+    --color-border: #1e3a5f;
+    --section-padding: 60px;
+}
+/* ===== About Us Section ===== */
+.about-main {
+    padding: 60px 20px;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+/* Intro */
+.about-main .intro h1 {
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.about-main .intro p {
+    max-width: 1000px;
+    margin: auto;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ===== How It Works ===== */
+.how-it-works {
+    margin: 60px 0 60px 0;
+
+}
+
+.how-it-works h2 {
+    color: var(--primary);
+    margin-bottom: 40px;
+}
+
+/* Steps Grid */
+.steps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.step-card {
+    background: #f9fafb;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 25px 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.step-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* ===== Why This Service ===== */
+.why-service {
+    margin-top: 60px;
+}
+
+.why-service h2 {
+    color: var(--primary);
+    margin-bottom: 40px;
+}
+
+/* Grid for why-cards */
+.why-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.why-card {
+    flex: 1 1 220px;
+    max-width: 260px;
+    background: #f9fafb;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+/* CTA Section */
+.cta-section {   
+  background-color: var(--color-primary-dark);  /* colored block same as home page */
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  color: var(--color-light);            /* text white */
+  margin: 60px 0;
+}
+
+/* CTA text */
+.cta-section .cta-text {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--bg-light);
+}
+
+/* CTA button */
+.cta-section .btn {
+  background-color: var(--color-light);  /* white button */
+  color: var(--color-dark);              /* text primary */
+  padding: 16px 40px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
