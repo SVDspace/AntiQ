@@ -265,81 +265,108 @@ a {
     }
 }
 
-/*login page*/
-.login-wrapper {
-    background-color: #fdfdfd;
-    min-height: 100vh;
+/* ================= LOGIN PAGE : MAIN CONTENT ================= */
+
+.login-main {
+    min-height: calc(100vh - 160px);
     display: flex;
     align-items: center;
+    justify-content: center;
+    background: #f5f8fc;
+    padding: 40px 20px;
 }
 
-/*.login-card {
-
-    background: #ffffff;
-    border: 1.5px solid #000000;
-    /* Matching your screenshot's border 
-    border-radius: 40px;
-    /* High rounding as seen in image 
-    padding: 50px 60px;
-    max-width: 480px;
-    margin: 0 auto;
+/* Card – SAME as Check Status */
+.login-card {
+    background: var(--color-light);
+    border: 1.5px solid var(--color-border);
+    border-radius: 30px;
+    padding: 50px 45px;
+    max-width: 420px;
+    width: 100%;
     text-align: center;
-}*/
-
-.login-card h2 {
-    font-size: 2.8rem;
-    margin-bottom: 5px;
-
 }
 
-.login-card .subtitle {
+/* Heading */
+.login-card h2 {
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 8px;
+}
+
+/* Subtitle */
+.login-text {
     font-size: 0.95rem;
     color: var(--color-text);
+    opacity: 0.85;
     margin-bottom: 35px;
-    display: block;
 }
 
-.input-group {
+/* Input group */
+.login-group {
     text-align: left;
     margin-bottom: 22px;
 }
 
-.input-group label {
+.login-group label {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    font-size: 1rem;
     color: var(--color-dark);
 }
 
-.input-group input {
+.login-group input {
     width: 100%;
     padding: 14px;
-    border: 1px solid #ddd;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #d1d9e6;
+    outline: none;
+}
+
+.login-group input:focus {
+    border-color: var(--color-primary);
+}
+
+/* Button – SAME style as Check Status */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--color-primary);
+    color: var(--color-light);
+    border: none;
     border-radius: 10px;
     font-size: 1rem;
-}
-
-/* Override the global .btn for the login button to be dark like the screenshot */
-.btn-login {
-    width: 100%;
-    background-color: #0a365c !important;
-    color: white !important;
-    padding: 14px;
-    border-radius: 10px;
-    font-weight: 500;
-    border: none;
     cursor: pointer;
     margin-top: 10px;
+    transition: background 0.3s ease;
 }
 
-.forgot-link {
+.login-btn:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Forgot link */
+.login-forgot {
     display: block;
     margin-top: 20px;
     font-size: 0.85rem;
-    text-decoration: underline;
     color: var(--color-text);
+    text-decoration: underline;
+    opacity: 0.85;
 }
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 40px 30px;
+    }
+
+    .login-card h2 {
+        font-size: 1.9rem;
+    }
+}
+
 
 /* ===============================
    CHECK STATUS PAGE (Scoped CSS)
