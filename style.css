@@ -603,6 +603,22 @@ a {
 
 
 
+/* ===============================
+   PRIVACY POLICY – MAIN CONTENT
+   =============================== */
+/* ===============================
+   PRIVACY POLICY – MAIN CONTENT
+   =============================== */
+
+
+main.privacy-container {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+}
+
 /* Page Title */
 main.privacy-container h1 {
     text-align: center;
@@ -686,6 +702,37 @@ main.privacy-container .policy-card.highlight {
     color: var(--color-light);
     border: none;
 }
+
+main.privacy-container .policy-card.highlight h2,
+main.privacy-container .policy-card.highlight p,
+main.privacy-container .policy-card.highlight li {
+    color: var(--color-light);
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+@media (max-width: 768px) {
+    main.privacy-container h1 {
+        font-size: 2rem;
+    }
+
+    main.privacy-container .policy-card {
+        padding: 26px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    main.privacy-container {
+        margin: 50px auto;
+    }
+
+    main.privacy-container h1 {
+        font-size: 1.8rem;
+    }
+}
+
 
 /* ===== Feedback Page Styles (Isolated) ===== */
 
