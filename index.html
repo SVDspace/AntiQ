@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
     <!-- ================= NAVBAR ================= -->
@@ -37,62 +40,104 @@
     </nav>
 
     <!-- ================= MAIN ================= -->
-    <main>
+    <!-- HERO / SLOGAN -->
+    <section class="hero">
+        <div class="hero-content animate-fade">
 
-        <!-- Hero -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h2>Lines? We've got it covered.</h2>
-                <p>
-                    Seamless access to services, minus the waiting chaos. A smarter way to access services without unnecessary waiting.
-                </p>
-                <a href="#contact" class="btn">Get Started</a>
+            <!-- NON-CLICKABLE BADGE -->
+            <span class="hero-badge">AntiQ • Queues made smarter</span>
+
+            <h1 class="hero-subtitle">
+                Lines? We've got it covered.
+            </h1>
+
+            <p class="hero-text">
+                AntiQ simplifies service access with smart token management, helping
+                people avoid long waits while organizations stay in control.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#" class="btn btn-outline">How It Works</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Service -->
-        <section id="service" class="section">
-            <div class="container">
-                <h2>What We Do</h2>
-                <p>
-                    We deliver a single, high-quality service with a
-                    clear process, transparent communication, and
-                    measurable outcomes.
-                </p>
+    <!-- ABOUT ANTIQ -->
+    <section class="section about">
+        <h2 class="section-title animate-up">About AntiQ</h2>
+        <p class="section-text animate-up delay-1">
+            AntiQ is a modern access management platform designed to replace physical
+            waiting lines with a transparent, digital token system. By optimizing how
+            services are accessed, AntiQ improves efficiency, reduces congestion, and
+            creates a calmer experience for everyone involved.
+        </p>
+    </section>
 
-                <ul class="service-list">
-                    <li>Clear strategy</li>
-                    <li>Expert execution</li>
-                    <li>On-time delivery</li>
-                    <li>Ongoing support</li>
-                </ul>
+    <!-- DESIGNED FOR -->
+    <section class="section designed-for">
+        <h2 class="section-title animate-up">Designed For</h2>
+
+        <div class="pill-group animate-up delay-1">
+            <span class="pill">Hospitals & Clinics</span>
+            <span class="pill">Educational Institutes</span>
+            <span class="pill">Service Centers</span>
+            <span class="pill">Government Offices</span>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how">
+        <h2 class="section-title animate-up">How It Works</h2>
+
+        <div class="card-grid">
+            <div class="card animate-up">
+                <h3>Book a Token</h3>
+                <p>Visitors request a token digitally and receive live updates.</p>
             </div>
-        </section>
 
-        <!-- CTA -->
-        <section class="cta">
-            <div class="container">
-                <h2>Ready to Move Forward?</h2>
-                <p>Let’s discuss how this service can help you.</p>
-                <a href="#contact" class="btn secondary">Contact Us</a>
+            <div class="card animate-up delay-1">
+                <h3>Manage Flow</h3>
+                <p>Admins control service flow in real time.</p>
             </div>
-        </section>
 
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2>Contact</h2>
-
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+            <div class="card animate-up delay-2">
+                <h3>Arrive on Time</h3>
+                <p>Arrive only when your turn is near.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- BUILT FOR EVERYONE -->
+    <section class="section">
+        <h2 class="section-title animate-up">Built for Everyone</h2>
+
+        <div class="split-grid">
+            <div class="split-card animate-up">
+                <h3>For Visitors</h3>
+                <p>Clear updates, no confusion, less waiting.</p>
+            </div>
+
+            <div class="split-card animate-up delay-1">
+                <h3>For Administrators</h3>
+                <p>Better control, analytics, and smoother operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2 class="animate-up">Ready to Remove Waiting?</h2>
+            <p class="animate-up delay-1">
+                Start using AntiQ and modernize how services are accessed.
+            </p>
+            <a href="#" class="btn btn-primary animate-up delay-2">
+                Get Started
+            </a>
+        </div>
+    </section>
+
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
@@ -101,7 +146,7 @@
             <div class="footer-column column1">
                 <h3 class="footer-logo">AntiQ</h3>
                 <ul>
-                <p>"A digital approach to  <br> efficient and transparent <br> queue management."</p>
+                    <p>"A digital approach to <br> efficient and transparent <br> queue management."</p>
                 </ul>
             </div>
 
@@ -110,23 +155,23 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="/AntiQ/index.html" target="_blank"">Home</a></li>
-                    <li><a href="/AntiQ/BookToken.html" target="_blank"">Book Token</a></li>
-                    <li><a href="/AntiQ/checkStatus.html" target="_blank"">Check Status</a></li>
-                    <li><a href="/AntiQ/login.html" target="_blank"">Login</a></li>
+                    <li><a href=" /AntiQ/BookToken.html" target="_blank"">Book Token</a></li>
+                    <li><a href=" /AntiQ/checkStatus.html" target="_blank"">Check Status</a></li>
+                    <li><a href=" /AntiQ/login.html" target="_blank"">Sign In / Sign Up</a></li>
                 </ul>
             </div>
 
 
 
             <!-- Column 2 -->
-            <div class="footer-column">
-                <h4>Social</h4>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">X</a></li>
-                    
-                </ul>
+            <div class=" footer-column">
+                            <h4>Explore</h4>
+                            <ul>
+                                <li><a href="#">FAQs</li>
+                                <li><a href="#">Why Choose AntiQ?</li>
+                                <li><a href="#">How it works?</a></li>
+
+                            </ul>
             </div>
 
             <!-- Column 3 -->
@@ -148,10 +193,16 @@
                     <li><a href="/AntiQ/HelpCenter.html" target="_blank">Help Center</a></li>
                 </ul>
             </div>
-    </div>
-             <div class="footer-bottom">
-             <p> © 2026 AntiQ. All rights reserved. </p>
-     </footer>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></i></a>
+            </div>
+            <p> © 2026 AntiQ. All rights reserved. </p>
+    </footer>
 
 </body>
 </html>
