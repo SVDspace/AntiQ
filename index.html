@@ -2,156 +2,200 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional service delivering real results.">
-    <title>AntiQ-Queues made smarter | Home</title>
+    <title>QLess Help Center</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #eef2f7, #f8fafc);
+    color: #333;
+}
+
+/* Center the whole content area */
+.container {
+    width: 92%;
+    max-width: 850px;
+    margin: 50px auto;   /* centers horizontally + adds top/bottom space */
+}
+
+/* Main page title */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2b6cb0;
+}
+
+/* Each help section card */
+.section {
+    background: #ffffff;
+    padding: 22px 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Section headings */
+h2 {
+    color: #1a4f8b;
+    margin-bottom: 12px;
+    font-size: 20px;
+    border-bottom: 2px solid #e6ecf5;
+    padding-bottom: 6px;
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* Help links */
+a {
+    text-decoration: none;
+    color: #2b6cb0;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #163e6d;
+    text-decoration: underline;
+}
+
+/* Search area styling */
+.search-box {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    width: 65%;
+    max-width: 420px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+button {
+    padding: 12px 18px;
+    margin-left: 8px;
+    border: none;
+    border-radius: 25px;
+    background-color: #2b6cb0;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #1a4f8b;
+    transform: scale(1.05);
+}
+</style>
 </head>
+
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">AntiQ</h1>
+<header>
+    <h1>QLess Help Center</h1>
+    <p>Help with queues, wait times, and notifications</p>
+    <input type="text" placeholder="Search for help...">
+    <button>Search</button>
+</header>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="/AntiQ/BookToken.html" target="_blank">Book Token</a></li>
-                <li><a href="/AntiQ/checkStatus.html" target="_blank">Check Status</a></li>
-                <li><a href="/AntiQ/AboutUs.html" target="_blank">About Us</a></li>
-            </ul>
+<div class="container">
 
-            <div class="nav-actions">
-                <a href="/AntiQ/login.html" target="_blank">Sign In / Sign Up</a>
-
-                <label class="theme-toggle">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ================= MAIN ================= -->
-    <main>
-
-        <!-- Hero -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h2>Lines? We've got it covered.</h2>
-                <p>
-                    Seamless access to services, minus the waiting chaos. A smarter way to access services without unnecessary waiting.
-                </p>
-                <a href="#contact" class="btn">Get Started</a>
-            </div>
-        </section>
-
-        <!-- Service -->
-        <section id="service" class="section">
-            <div class="container">
-                <h2>What We Do</h2>
-                <p>
-                    We deliver a single, high-quality service with a
-                    clear process, transparent communication, and
-                    measurable outcomes.
-                </p>
-
-                <ul class="service-list">
-                    <li>Clear strategy</li>
-                    <li>Expert execution</li>
-                    <li>On-time delivery</li>
-                    <li>Ongoing support</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta">
-            <div class="container">
-                <h2>Ready to Move Forward?</h2>
-                <p>Let’s discuss how this service can help you.</p>
-                <a href="#contact" class="btn secondary">Contact Us</a>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2>Contact</h2>
-
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="container footer-grid">
-
-            <div class="footer-column column1">
-                <h3 class="footer-logo">AntiQ</h3>
-                <ul>
-                <p>"A digital approach to  <br> efficient and transparent <br> queue management."</p>
-                </ul>
-            </div>
-
-            <!-- Column 1 -->
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/AntiQ/index.html" target="_blank"">Home</a></li>
-                    <li><a href="/AntiQ/BookToken.html" target="_blank"">Book Token</a></li>
-                    <li><a href="/AntiQ/checkStatus.html" target="_blank"">Check Status</a></li>
-                    <li><a href="/AntiQ/login.html" target="_blank"">Login</a></li>
-                </ul>
-            </div>
-
-
-
-            <!-- Column 2 -->
-            <div class="footer-column">
-                <h4>Social</h4>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">X</a></li>
-                    
-                </ul>
-            </div>
-
-            <!-- Column 3 -->
-            <div class="footer-column">
-                <h4>Policies</h4>
-                <ul>
-                    <li><a href="/AntiQ/PrivacyPolicy.html" target="_blank">Privacy Policy</a></li>
-                    <li><a href="/AntiQ/T&C.html" target="_blank">Terms and conditions</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4 -->
-            <div class="footer-column">
-                <h4>Contact & Support</h4>
-                <ul>
-                    <p>Email: support@AntiQ.app</p>
-                    <p>Phone: +91-XXXXXXXXXX</p>
-                    <li><a href="/AntiQ/Feedback.html" target="_blank">Feedback</a></li>
-                    <li><a href="/AntiQ/HelpCenter.html" target="_blank">Help Center</a></li>
-                </ul>
-            </div>
+    <div class="section">
+        <h2>Getting Started</h2>
+        <ul>
+            <li><a href="#">What is QLess and how does it work?</a></li>
+            <li><a href="#">How do I join a queue?</a></li>
+            <li><a href="#">Do I need an account?</a></li>
+            <li><a href="#">How will I know when it's my turn?</a></li>
+        </ul>
     </div>
-             <div class="footer-bottom">
-             <p> © 2026 AntiQ. All rights reserved. </p>
-     </footer>
+
+    <div class="section">
+        <h2>Joining & Managing a Queue</h2>
+        <ul>
+            <li><a href="#">Join a queue online</a></li>
+            <li><a href="#">Join using a QR code</a></li>
+            <li><a href="#">Leave or cancel a queue</a></li>
+            <li><a href="#">Why did my position change?</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Notifications</h2>
+        <ul>
+            <li><a href="#">How notifications work</a></li>
+            <li><a href="#">I didn’t receive a message</a></li>
+            <li><a href="#">Change my notification method</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Wait Times</h2>
+        <ul>
+            <li><a href="#">How wait time is calculated</a></li>
+            <li><a href="#">Why did my wait time increase?</a></li>
+            <li><a href="#">Is the wait time accurate?</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Account Help</h2>
+        <ul>
+            <li><a href="#">Create an account</a></li>
+            <li><a href="#">Log in to QLess</a></li>
+            <li><a href="#">Reset password</a></li>
+            <li><a href="#">Update phone number or email</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Troubleshooting</h2>
+        <ul>
+            <li><a href="#">I lost my spot in line</a></li>
+            <li><a href="#">The page is not loading</a></li>
+            <li><a href="#">QR code not working</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Privacy & Safety</h2>
+        <ul>
+            <li><a href="#">Why do you need my phone number?</a></li>
+            <li><a href="#">Is my data safe?</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Contact Support</h2>
+        <p>Email: support@qless.com</p>
+        <p>Response time: Within 24 hours</p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 QLess. All rights reserved.
+</footer>
 
 </body>
 </html>
