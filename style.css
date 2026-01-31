@@ -598,18 +598,10 @@ a {
   transform: translateY(-3px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
+/*feedback*/
 
 
-/* PRIVACY POLICY PAGE */
 
-/* ===============================
-   PRIVACY POLICY – MAIN CONTENT
-   =============================== */
-
-main.privacy-container {
-    max-width: 1200px;
-    margin: 70px auto;
-    padding: 0 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color-text);
 }
@@ -698,7 +690,3 @@ main.privacy-container .policy-card.highlight {
     border: none;
 }
 
-main.privacy-container .policy-card.highlight h2,
-main.privacy-container .policy-card.highlight p,
-main.privacy-container .policy-card.highlight li {
-    color: var(--color-light);}
