@@ -32,29 +32,75 @@
         </div>
     </nav>
 
-    <!-- Main Feedback Section -->
-    <main>
-        <h1>Feedback</h1>
-      
+    <section class="fb-wrapper">
+    <div class="fb-card">
+        <h1 class="fb-title">We Value Your Feedback</h1>
+        <p class="fb-subtitle">Help us improve your AntiQ queue experience</p>
 
-        <form action="#" method="post">
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name" placeholder="Value"><br><br>
+        <form class="fb-form">
 
-            <label for="surname">Surname</label><br>
-            <input type="text" id="surname" name="surname" placeholder="Value"><br><br>
+            <!-- Rating -->
+            <label class="fb-label">⭐ How was your overall experience?</label>
+            <div class="fb-rating">
+                <input type="radio" name="rating" id="star5"><label for="star5">5</label>
+                <input type="radio" name="rating" id="star4"><label for="star4">4</label>
+                <input type="radio" name="rating" id="star3"><label for="star3">3</label>
+                <input type="radio" name="rating" id="star2"><label for="star2">2</label>
+                <input type="radio" name="rating" id="star1"><label for="star1">1</label>
+            </div>
 
-            <label for="email">Email</label><br>
-            <input type="email" id="email" name="email" placeholder="Value"><br><br>
+            <!-- Usage Type -->
+            <label class="fb-label">🧭 What did you use AntiQ for?</label>
+            <select class="fb-input">
+                <option>Hospital Visit</option>
+                <option>Bank Visit</option>
+                <option>Salon / Service Center</option>
+                <option>College / Office</option>
+                <option>Other</option>
+            </select>
 
-            <label for="message">Message</label><br>
-            <textarea id="message" name="message" rows="4" cols="30" placeholder="Value"></textarea><br><br>
+            <!-- Experience Questions -->
+            <label class="fb-label">⏱️ Did AntiQ reduce your waiting time?</label>
+            <div class="fb-options">
+                <label><input type="radio" name="wait"> Yes</label>
+                <label><input type="radio" name="wait"> No</label>
+                <label><input type="radio" name="wait"> Not Sure</label>
+            </div>
 
-            <button type="submit">Submit</button>
+            <label class="fb-label">🔔 Were notifications helpful?</label>
+            <div class="fb-options">
+                <label><input type="radio" name="notify"> Very Helpful</label>
+                <label><input type="radio" name="notify"> Somewhat</label>
+                <label><input type="radio" name="notify"> Not Helpful</label>
+            </div>
+
+            <!-- Problems -->
+            <label class="fb-label">🐞 Did you face any problems?</label>
+            <textarea class="fb-input fb-textarea" placeholder="Describe any issues you faced..."></textarea>
+            <!-- Suggestions -->
+            <label class="fb-label">💡 Any suggestions to improve AntiQ?</label>
+            <textarea class="fb-input fb-textarea" placeholder="Share your ideas..."></textarea>
+
+            <!-- Recommendation -->
+            <label class="fb-label">😊 Would you recommend AntiQ to others?</label>
+            <div class="fb-options">
+                <label><input type="radio" name="recommend"> Yes</label>
+                <label><input type="radio" name="recommend"> Maybe</label>
+                <label><input type="radio" name="recommend"> No</label>
+            </div>
+           
+
+            <!-- Email -->
+            <label class="fb-label">📧 Email (optional)</label>
+            <input type="email" class="fb-input" placeholder="Enter your email if you'd like a response">
+
+            <p class="fb-privacy">🔒 Your feedback is used only to improve AntiQ and will not be shared.</p>
+
+            <button type="submit" class="fb-btn">Submit Feedback</button>
+
         </form>
-    </main>
-
-    <hr>
+    </div>
+</section>
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
