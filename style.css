@@ -1157,3 +1157,75 @@ main.privacy-container .policy-card.highlight li {
         font-size: 1.3rem;
     }
 }
+
+/* ===== Terms & Conditions Page Styles ===== */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+.legal-wrapper {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.legal-box {
+    background: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    padding: 50px;
+    border-radius: 14px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.legal-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.legal-updated {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+.legal-block {
+    margin-bottom: 30px;
+}
+
+.legal-block h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #132f4c;
+}
+
+.legal-block p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.legal-block ul {
+    padding-left: 20px;
+    line-height: 1.7;
+}
+
+.legal-block li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .legal-box {
+        padding: 30px 20px;
+    }
+
+    .legal-heading {
+        font-size: 2rem;
+    }
+}
+
