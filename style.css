@@ -1322,7 +1322,7 @@ body {
 
 /* BUTTON */
 
-.btn-primary {
+.btn-primary-token{
     background: var(--color-primary);
     color: white;
     border: none;
@@ -1333,7 +1333,7 @@ body {
     transition: .25s;
 }
 
-.btn-primary:hover {
+.btn-primary-token:hover {
     background: var(--color-primary-dark);
     transform: translateY(-1px);
 }
