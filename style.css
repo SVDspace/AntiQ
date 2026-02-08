@@ -710,8 +710,9 @@ a {
 
 /* CTA Section */
 .cta-section {
-    background-color: var(--color-primary-dark);
-    /* colored block same as home page */
+    background: linear-gradient(180deg,
+            var(--color-primary),
+            var(--color-primary-dark));
     padding: 60px 20px;
     text-align: center;
     border-radius: 12px;
@@ -729,8 +730,8 @@ a {
     color: var(--bg-light);
 }
 
-p.cta-intro{
-    margin:16px 0 34px;
+p.cta-intro {
+    margin: 16px 0 34px;
 }
 
 /* CTA button */
@@ -844,11 +845,9 @@ main.privacy-container ul li {
 
 /* Highlight Card (optional use later) */
 main.privacy-container .policy-card.highlight {
-    background: linear-gradient(
-        135deg,
-        var(--color-primary-dark),
-        var(--color-dark-secondary)
-    );
+    background: linear-gradient(135deg,
+            var(--color-primary-dark),
+            var(--color-dark-secondary));
     color: var(--color-light);
     border: none;
 }
@@ -888,7 +887,8 @@ main.privacy-container .policy-card.highlight li {
 
 .fb-wrapper {
     min-height: 100vh;
-    background: #f5f7fb; /* Light gray background */
+    background: #f5f7fb;
+    /* Light gray background */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -902,7 +902,8 @@ main.privacy-container .policy-card.highlight li {
     max-width: 650px;
     border-radius: 16px;
     padding: 45px 50px;
-    border: 1.5px solid #cbd5e1; /* More visible border */
+    border: 1.5px solid #cbd5e1;
+    /* More visible border */
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
@@ -970,7 +971,7 @@ main.privacy-container .policy-card.highlight li {
     transition: 0.2s;
 }
 
-.fb-rating input:checked + label {
+.fb-rating input:checked+label {
     background: #0f4c81;
     color: white;
 }
@@ -1015,7 +1016,7 @@ main.privacy-container .policy-card.highlight li {
     flex-wrap: wrap;
 }
 
-.fb-trigger:checked ~ .fb-confetti-container {
+.fb-trigger:checked~.fb-confetti-container {
     opacity: 1;
     animation: fb-fall 2s forwards;
 }
@@ -1029,15 +1030,22 @@ main.privacy-container .policy-card.highlight li {
     animation: none;
 }
 
-.fb-trigger:checked ~ .fb-confetti-container .fb-confetti {
+.fb-trigger:checked~.fb-confetti-container .fb-confetti {
     animation: fb-fall 2s ease-out forwards;
     animation-delay: calc(var(--i) * 0.05s);
 }
 
 /* Keyframes for confetti fall */
 @keyframes fb-fall {
-    0% { transform: translateY(0px) rotate(0deg); opacity:1; }
-    100% { transform: translateY(300px) rotate(720deg); opacity:0; }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(300px) rotate(720deg);
+        opacity: 0;
+    }
 }
 
 /* Responsive */
@@ -1054,7 +1062,7 @@ main.privacy-container .policy-card.highlight li {
 /* ===== Help Center Styles (No Conflict) ===== */
 
 .hc-hero {
-    
+
     background-color: white;
     text-align: center;
     padding: 40px 20px;
@@ -1105,7 +1113,7 @@ main.privacy-container .policy-card.highlight li {
     border-radius: 10px;
     padding: 15px 18px;
     margin-bottom: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
@@ -1113,7 +1121,7 @@ main.privacy-container .policy-card.highlight li {
 
 .hc-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
 .hc-question {
@@ -1229,3 +1237,156 @@ body {
     }
 }
 
+/*======Book token=======*/
+.book-token-page {
+    padding: 80px 8%;
+}
+
+/* LAYOUT */
+
+.book-wrapper {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 40px;
+}
+
+/* CARD */
+
+.token-form-card {
+    background: white;
+    padding: 42px;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(11, 31, 51, 0.12);
+}
+
+.token-form-card h2 {
+    margin: 0;
+    color: var(--color-dark);
+    font-size: 2rem;
+}
+
+.form-sub {
+    color: var(--color-muted);
+    margin: 8px 0 28px;
+}
+
+/* GRID */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+/* FIELD */
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.field label {
+    font-size: .9rem;
+    margin-bottom: 6px;
+    color: var(--color-dark-secondary);
+    font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #d9e3ef;
+    font-size: .95rem;
+    background: #fbfdff;
+    transition: .2s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(15, 76, 129, .15);
+    background: white;
+}
+
+
+.hint {
+    font-size: .8rem;
+    color: var(--color-muted);
+    margin-top: 6px;
+}
+
+/* BUTTON */
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.token-submit {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* INFO PANEL */
+
+.token-info-card {
+    background: linear-gradient(180deg,
+            var(--color-primary),
+            var(--color-primary-dark));
+    color: white;
+    padding: 36px;
+    border-radius: 18px;
+    height: fit-content;
+    position: relative;
+}
+
+.token-info-card h3 {
+    margin-top: 0;
+}
+
+.token-info-card ul {
+    padding-left: 18px;
+    line-height: 1.9;
+    opacity: .95;
+}
+
+.info-box {
+    margin-top: 22px;
+    background: rgba(255, 255, 255, .15);
+    padding: 14px;
+    border-radius: 12px;
+    font-size: .9rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .book-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .token-info-card {
+        position: relative;
+        top: auto;
+    }
+}
