@@ -17,23 +17,30 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar">
         <div class="container">
+
             <h1 class="logo">AntiQ</h1>
 
+            <input type="checkbox" id="menu-toggle">
+
             <ul class="nav-links">
-                <li><a href="/AntiQ/index.html" target="_blank"">Home</a></li>
-                <li><a href=" /AntiQ/BookToken.html" target="_blank">Book Token</a></li>
-                <li><a href="/AntiQ/checkStatus.html" target="_blank">Check Status</a></li>
-                <li><a href="/AntiQ/AboutUs.html" target="_blank">About Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="/AntiQ/BookToken.html">Book Token</a></li>
+                <li><a href="/AntiQ/checkStatus.html">Check Status</a></li>
+                <li><a href="/AntiQ/AboutUs.html">About Us</a></li>
+                <li class="mobile-only"><a href="/AntiQ/login.html">Sign In / Sign Up</a></li>
             </ul>
 
             <div class="nav-actions">
-                <a href="/AntiQ/login.html" target="_blank">Sign In / Sign Up</a>
+                <a href="/AntiQ/login.html" class="desktop-only">Sign In / Sign Up</a>
 
                 <label class="theme-toggle">
                     <input type="checkbox">
                     <span class="slider"></span>
                 </label>
+
+                <label for="menu-toggle" class="menu-btn">☰</label>
             </div>
+
         </div>
     </nav>
     <!-- MAIN CONTENT -->
@@ -43,55 +50,55 @@
     </div>
     <div class="faq-container">
 
-    
-    
 
-    <div class="faq-item">
-        <input type="checkbox" id="faq1">
-        <label for="faq1" class="faq-question">
-            What is the AntiQ?
-        </label>
-        <div class="faq-answer">
-            AntiQ is an online queue management system that allows users
-            to book tokens and track their queue status easily.
-        </div>
-    </div>
 
-    <div class="faq-item">
-        <input type="checkbox" id="faq2">
-        <label for="faq2" class="faq-question">
-            How can I book a token?
-        </label>
-        <div class="faq-answer">
-            You can book a token from the Book Token page by entering
-            the required details and receiving a booking ID.
-        </div>
-    </div>
 
-    <div class="faq-item">
-        <input type="checkbox" id="faq3">
-        <label for="faq3" class="faq-question">
-            How do I check my queue status?
-        </label>
-        <div class="faq-answer">
-            Visit the Check Status page and enter your booking ID
-            to see your current position in the queue.
+        <div class="faq-item">
+            <input type="checkbox" id="faq1">
+            <label for="faq1" class="faq-question">
+                What is the AntiQ?
+            </label>
+            <div class="faq-answer">
+                AntiQ is an online queue management system that allows users
+                to book tokens and track their queue status easily.
+            </div>
         </div>
 
-    </div>
-
-    <div class="faq-item">
-        <input type="checkbox" id="faq4">
-        <label for="faq4" class="faq-question">
-            Is login required?
-        </label>
-        <div class="faq-answer">
-            Login is not mandatory, but it helps you manage
-            and track your bookings more efficiently.
+        <div class="faq-item">
+            <input type="checkbox" id="faq2">
+            <label for="faq2" class="faq-question">
+                How can I book a token?
+            </label>
+            <div class="faq-answer">
+                You can book a token from the Book Token page by entering
+                the required details and receiving a booking ID.
+            </div>
         </div>
-    </div>
 
-</div>
+        <div class="faq-item">
+            <input type="checkbox" id="faq3">
+            <label for="faq3" class="faq-question">
+                How do I check my queue status?
+            </label>
+            <div class="faq-answer">
+                Visit the Check Status page and enter your booking ID
+                to see your current position in the queue.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq4">
+            <label for="faq4" class="faq-question">
+                Is login required?
+            </label>
+            <div class="faq-answer">
+                Login is not mandatory, but it helps you manage
+                and track your bookings more efficiently.
+            </div>
+        </div>
+
+    </div>
 
 
 
