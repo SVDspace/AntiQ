@@ -475,8 +475,8 @@ a {
 }
 
 /* Forgot link */
-.login-forgot {
-    display: block;
+.login-forgot, .existing-account {
+    display: inline-block;
     margin-top: 20px;
     font-size: 0.85rem;
     color: var(--color-text);
