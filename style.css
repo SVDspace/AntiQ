@@ -400,6 +400,7 @@ a {
     align-items: center;
     justify-items: center;
     border-right: 1px solid var(--color-border);
+    padding-right: 20px;
 }
 
 .footer-column ul {
@@ -443,19 +444,65 @@ a {
     transform: translateY(-2px);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+
+/* ============================= */
+/*        RESPONSIVE FOOTER      */
+/* ============================= */
+
+/* Large Screens (Default Desktop) */
+@media (min-width: 1024px) {
     .footer-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        text-align: left;
     }
 }
 
-@media (max-width: 480px) {
+/* Tablet View */
+@media (max-width: 1023px) and (min-width: 768px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        text-align: left;
+    }
+
+    .column1 {
+        grid-row: 1 / span 2;
+        border-right: 1px solid var(--color-border);
+        border-bottom: none;
+        padding-right: 20px;
+
+        align-items: flex-start;
+        align-self: center;   /* 🔥 Ye naya add kiya */
+    }
+
+}
+
+
+/* Mobile View */
+@media (max-width: 767px) {
+
+    .footer {
+        padding-top: 40px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 25px;
+        text-align: left;
     }
+
+    .column1 {
+    border: none;
+    margin-bottom: 20px;
+    align-items: center;   /* flex items center */
+    text-align: center;    /* text center */
 }
+
+
+}
+
+
 
 /* ================= LOGIN PAGE ================= */
 /* ===== Main ===== */
