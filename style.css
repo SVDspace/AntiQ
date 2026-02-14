@@ -393,7 +393,7 @@ a {
 }
 
 /* ================= LOGIN PAGE ================= */
-/* ===== Main ===== */
+
 
 .login-main {
     min-height: calc(100vh - 160px);
@@ -404,7 +404,7 @@ a {
     padding: 40px 20px;
 }
 
-/* Card – Same as Check Status */
+
 .login-card {
     background: var(--color-light);
     border: 1.5px solid var(--color-border);
