@@ -17,23 +17,30 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar">
         <div class="container">
+
             <h1 class="logo">AntiQ</h1>
 
+            <input type="checkbox" id="menu-toggle">
+
             <ul class="nav-links">
-                <li><a href="/AntiQ/index.html">Home</a></li>
-                <li><a href=" /AntiQ/BookToken.html">Book Token</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="/AntiQ/BookToken.html">Book Token</a></li>
                 <li><a href="/AntiQ/checkStatus.html">Check Status</a></li>
                 <li><a href="/AntiQ/AboutUs.html">About Us</a></li>
+                <li class="mobile-only"><a href="/AntiQ/login.html">Sign In / Sign Up</a></li>
             </ul>
 
             <div class="nav-actions">
-                <a href="/AntiQ/login.html">Sign In / Sign Up</a>
+                <a href="/AntiQ/login.html" class="desktop-only">Sign In / Sign Up</a>
 
                 <label class="theme-toggle">
                     <input type="checkbox">
                     <span class="slider"></span>
                 </label>
+
+                <label for="menu-toggle" class="menu-btn">☰</label>
             </div>
+
         </div>
     </nav>
 

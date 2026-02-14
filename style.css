@@ -122,6 +122,71 @@ a {
     transform: translateX(24px);
 }
 
+/* helpers */
+#menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* MOBILE ONLY */
+
+@media (max-width: 900px) {
+    .menu-btn {
+        display: block;
+        font-size: 26px;
+        cursor: pointer;
+        color: var(--color-light);
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        order: 10;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease;
+        background: var(--color-dark);
+    }
+
+    #menu-toggle:checked~.nav-links {
+        max-height: 420px;
+    }
+
+    .nav-links li {
+        border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 0;
+        color: #fff;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+        gap: 14px;
+    }
+}
+
 /* ===== INDEX PAGE ===== */
 /* Hero */
 .hero {
@@ -522,7 +587,8 @@ a {
 }
 
 /* Forgot link */
-.login-forgot, .existing-account {
+.login-forgot,
+.existing-account {
     display: inline-block;
     margin-top: 20px;
     font-size: 0.85rem;
@@ -1257,9 +1323,9 @@ main.privacy-container .policy-card.highlight li {
     font-family: Arial, sans-serif;
 }
 
- .faq-page-title {
+.faq-page-title {
     text-align: center;
-    margin-top: 60px; 
+    margin-top: 60px;
     margin-bottom: 8px;
     font-size: 28px;
     color: #111827;
@@ -1302,13 +1368,13 @@ main.privacy-container .policy-card.highlight li {
 }
 
 /* CLICK MAGIC ✨ */
-.faq-item input:checked ~ .faq-answer {
-    max-height: 1000px;
+.faq-item input:checked~.faq-answer {
+    max-height: 300px;
     padding: 15px 20px;
 }
 
 /* Active question style */
-.faq-item input:checked + .faq-question {
+.faq-item input:checked+.faq-question {
     background: #0f4c81;
     color: #ffffff;
 }
@@ -1432,7 +1498,7 @@ main.privacy-container .policy-card.highlight li {
 }
 
 /* BUTTON */
-.btn-primary-token{
+.btn-primary-token {
     background: var(--color-primary);
     color: white;
     border: none;
