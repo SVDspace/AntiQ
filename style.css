@@ -1716,3 +1716,163 @@ body.dark .cta {
 body.dark .cta p {
     color: var(--text-muted);
 }
+
+/* ================= BOOK TOKEN DARK MODE ================= */
+
+body.dark .book-token-page{
+    background:var(--bg-main);
+    color:var(--text-main);
+}
+
+body.dark .token-form-card,
+body.dark .token-info-card{
+    background:var(--bg-card);
+    border:1px solid var(--border-color);
+}
+
+body.dark .token-form-card h2,
+body.dark .token-info-card h3{
+    color:var(--text-secondary);
+}
+
+body.dark .form-sub{
+    color:var(--text-muted);
+}
+
+body.dark .hint{
+    color:var(--text-muted);
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea{
+    background:var(--bg-secondary);
+    color:var(--text-main);
+    border:1px solid var(--border-color);
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder{
+    color:var(--text-muted);
+}
+
+body.dark .info-box{
+    background:var(--bg-secondary);
+    border:1px solid var(--border-color);
+    color:var(--text-secondary);
+}
+
+body.dark .btn-primary-token,
+body.dark .token-submit{
+    background:var(--btn-bg);
+    color:var(--btn-text);
+    border:none;
+}
+
+body.dark .btn-primary-token:hover,
+body.dark .token-submit:hover{
+    background:var(--hover-bg);
+}
+
+body.dark ul li{
+    color:var(--text-secondary);
+}
+
+body.dark .token-form-card label,
+body.dark .token-info-card li{
+    color:var(--text-secondary);
+}
+
+/* smooth transition */
+body.dark .book-token-page *{
+    transition:0.3s ease;
+}
+
+/* fix select dropdown dark mode */
+body.dark select{
+    background:var(--bg-secondary);
+    color:var(--text-main);
+    border:1px solid var(--border-color);
+}
+
+/* dropdown options */
+body.dark select option{
+    background:var(--bg-card);
+    color:var(--text-main);
+}
+
+/* textarea fix */
+body.dark textarea{
+    background:var(--bg-secondary);
+    color:var(--text-main);
+}
+
+/* input focus fix */
+body.dark input:focus,
+body.dark select:focus,
+body.dark textarea:focus{
+    background:var(--bg-secondary);
+    color:var(--text-main);
+    outline:none;
+    border:1px solid var(--border-color);
+}
+
+/* date input dark mode fix */
+body.dark input[type="date"]{
+    background:var(--bg-secondary);
+    color:var(--text-main);
+    border:1px solid var(--border-color);
+}
+
+/* calendar icon white */
+body.dark input[type="date"]::-webkit-calendar-picker-indicator{
+    filter:invert(1);
+    cursor:pointer;
+}
+
+/* ================= CHECK STATUS DARK MODE ================= */
+
+body.dark.check-status-page{
+    background:var(--bg-main);
+    color:var(--text-main);
+}
+
+body.dark .card{
+    background:var(--bg-card);
+    border:1px solid var(--border-color);
+    color:var(--text-main);
+}
+
+body.dark .card h2{
+    color:var(--text-secondary);
+}
+
+body.dark .card p{
+    color:var(--text-muted);
+}
+
+body.dark .card input{
+    background:var(--bg-secondary);
+    color:var(--text-main);
+    border:1px solid var(--border-color);
+}
+
+body.dark .card input::placeholder{
+    color:var(--text-muted);
+}
+
+body.dark .card button{
+    background:var(--btn-bg);
+    color:var(--btn-text);
+    border:none;
+}
+
+body.dark .card button:hover{
+    background:var(--text-main);
+}
+
+/* smooth transition */
+body.dark .card,
+body.dark .card *{
+    transition:0.3s ease;
+}
