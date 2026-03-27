@@ -121,60 +121,66 @@ a {
 .theme-toggle input:checked+.slider::before {
     transform: translateX(24px);
 }
+
 /* ===== MOBILE NAV ===== */
 
-#nav-toggle-safe{display:none;}
-.menu-btn-safe{display:none;}
+#nav-toggle-safe {
+    display: none;
+}
 
-@media (max-width: 900px){
+.menu-btn-safe {
+    display: none;
+}
 
-  .navbar .container{
-    flex-wrap:wrap;
-  }
+@media (max-width: 900px) {
 
-  .logo{
-    flex:0 0 auto;
-  }
+    .navbar .container {
+        flex-wrap: wrap;
+    }
 
-  .nav-actions{
-    margin-left:auto;
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
+    .logo {
+        flex: 0 0 auto;
+    }
 
-  .menu-btn-safe{
-    display:block;
-    font-size:24px;
-    cursor:pointer;
-    color:var(--color-light);
-  }
+    .nav-actions {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
-  .nav-links{
-    width:100%;
-    order:3;
+    .menu-btn-safe {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--color-light);
+    }
 
-    flex-direction:column;
-    background:var(--color-dark);
+    .nav-links {
+        width: 100%;
+        order: 3;
 
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .3s ease;
-  }
+        flex-direction: column;
+        background: var(--color-dark);
 
-  #nav-toggle-safe:checked ~ .nav-links{
-    max-height:420px;
-  }
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease;
+    }
 
-  .nav-links li{
-    border-top:1px solid rgba(255,255,255,.08);
-  }
+    #nav-toggle-safe:checked~.nav-links {
+        max-height: 420px;
+    }
 
-  .nav-links a{
-    display:block;
-    padding:14px 0;
-    color:var(--color-light);
-  }
+    .nav-links li {
+        border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 0;
+        color: var(--color-light);
+    }
 }
 
 /* ===== INDEX PAGE ===== */
@@ -439,27 +445,30 @@ a {
         border-bottom: none;
         padding-right: 20px;
         align-items: center;
-        align-self: center;  
+        align-self: center;
     }
 
 }
 
 @media (max-width: 767px) {
-     .footer { 
-        padding-top: 40px; 
-    } 
-     .footer-grid {
-         grid-template-columns: 1fr; 
-         gap: 25px; 
-         text-align: left; 
-        }
-      .column1 {
-         border: none;
-         margin-bottom: 20px;
-         align-items: center;  
-         text-align: center;    
+    .footer {
+        padding-top: 40px;
+    }
 
-     }}
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: left;
+    }
+
+    .column1 {
+        border: none;
+        margin-bottom: 20px;
+        align-items: center;
+        text-align: center;
+
+    }
+}
 
 /* ================= LOGIN PAGE ================= */
 
@@ -544,7 +553,8 @@ a {
 }
 
 /* Forgot link */
-.login-forgot, .existing-account {
+.login-forgot,
+.existing-account {
     display: inline-block;
     margin-top: 20px;
     font-size: 0.85rem;
@@ -1005,12 +1015,13 @@ main.privacy-container .policy-card.highlight li {
     flex-wrap: wrap;
     font-size: 0.9rem;
 }
+
 .fb-rating {
     display: flex;
     justify-content: space-between;
     max-width: 220px;
     width: 100%;
-    gap: 6px; 
+    gap: 6px;
 }
 
 .fb-rating label {
@@ -1031,7 +1042,7 @@ main.privacy-container .policy-card.highlight li {
 
 
 
-.fb-rating input:checked + label {
+.fb-rating input:checked+label {
     background: #0f4c81;
     color: white;
 }
@@ -1070,7 +1081,7 @@ main.privacy-container .policy-card.highlight li {
     }
 
     .fb-card {
-      max-width:100%;
+        max-width: 100%;
         border-radius: 12px;
     }
 
@@ -1279,9 +1290,9 @@ main.privacy-container .policy-card.highlight li {
     font-family: Arial, sans-serif;
 }
 
- .faq-page-title {
+.faq-page-title {
     text-align: center;
-    margin-top: 60px; 
+    margin-top: 60px;
     margin-bottom: 8px;
     font-size: 28px;
     color: #111827;
@@ -1324,13 +1335,13 @@ main.privacy-container .policy-card.highlight li {
 }
 
 /* CLICK MAGIC ✨ */
-.faq-item input:checked ~ .faq-answer {
+.faq-item input:checked~.faq-answer {
     max-height: 1000px;
     padding: 15px 20px;
 }
 
 /* Active question style */
-.faq-item input:checked + .faq-question {
+.faq-item input:checked+.faq-question {
     background: #0f4c81;
     color: #ffffff;
 }
@@ -1454,7 +1465,7 @@ main.privacy-container .policy-card.highlight li {
 }
 
 /* BUTTON */
-.btn-primary-token{
+.btn-primary-token {
     background: var(--color-primary);
     color: white;
     border: none;
@@ -1528,19 +1539,14 @@ body.dark {
     --bg-main: #0e1117;
     --bg-secondary: #161b22;
     --bg-card: #1f2630;
-
     --border-color: #2d3643;
-
     --text-main: #f0f1f3c0;
     --text-secondary: #ccd6e2;
     --text-muted: #8b98a7;
-
     --btn-bg: #cbcccc;
     --btn-text: #0e1117;
-
     --hover-bg: #313b47;
 }
-
 
 /* ================= BASE ================= */
 
@@ -1548,7 +1554,6 @@ body.dark {
     background: var(--bg-main);
     color: var(--text-main);
 }
-
 
 /* ================= TEXT ================= */
 
@@ -1568,7 +1573,6 @@ body.dark .form-sub {
     color: var(--text-muted);
 }
 
-
 /* ================= NAVBAR ================= */
 
 body.dark .navbar {
@@ -1584,7 +1588,6 @@ body.dark .nav-links a:hover {
     color: var(--text-main);
 }
 
-
 /* ================= HERO ================= */
 
 body.dark .hero {
@@ -1596,14 +1599,12 @@ body.dark .hero-badge {
     border: 1px solid var(--border-color);
 }
 
-
 /* ================= SECTIONS ================= */
 
 body.dark .about,
 body.dark .how {
     background: var(--bg-secondary);
 }
-
 
 /* ================= CARDS ================= */
 
@@ -1615,7 +1616,6 @@ body.dark .check-status-page .card,
 body.dark .fb-card,
 body.dark .faq-container,
 body.dark .legal-box {
-
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
@@ -1627,7 +1627,6 @@ body.dark .split-card:hover {
     background: var(--hover-bg);
     transform: translateY(-4px);
 }
-
 
 /* ================= PILLS ================= */
 
@@ -1641,7 +1640,6 @@ body.dark .pill:hover {
     background: var(--hover-bg);
     color: var(--text-main);
 }
-
 
 /* ================= BUTTONS ================= */
 
@@ -1664,7 +1662,6 @@ body.dark .btn-outline:hover {
     color: var(--btn-text);
 }
 
-
 /* ================= INPUTS ================= */
 
 body.dark input,
@@ -1681,7 +1678,6 @@ body.dark select:focus {
     border-color: var(--text-main);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -1706,6 +1702,7 @@ body.dark .footer a:hover {
 body.dark .footer-bottom {
     border-top: 1px solid var(--border-color);
 }
+
 body.dark .column1 {
     border-right: 1px solid var(--border-color);
 }
