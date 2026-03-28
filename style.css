@@ -1908,3 +1908,186 @@ body.dark .card button{
 body.dark .card button:hover{
     background:var(--text-muted);
 }
+
+/* ================= ABOUT PAGE DARK MODE ================= */
+
+/* Main Background */
+body.dark .about-main{
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* Intro Section */
+body.dark .intro h1{
+    color: var(--text-secondary);
+}
+
+body.dark .intro p{
+    color: var(--text-muted);
+}
+
+/* How it works sections */
+body.dark .how-it-works h2{
+    color: var(--text-secondary);
+}
+
+/* Step cards */
+body.dark .step-card{
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+body.dark .step-card h3{
+    color: var(--text-secondary);
+}
+
+body.dark .step-card p{
+    color: var(--text-muted);
+}
+
+/* Step number circle */
+body.dark .step-number{
+    background: var(--hover-bg);
+    color: var(--text-main);
+}
+
+/* Divider line */
+body.dark hr{
+    border: 1px solid var(--border-color);
+}
+
+/* Why choose section */
+body.dark .why-service h2{
+    color: var(--text-secondary);
+}
+
+body.dark .why-card{
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+body.dark .why-card h3{
+    color: var(--text-secondary);
+}
+
+body.dark .why-card p{
+    color: var(--text-muted);
+}
+
+/* CTA section */
+body.dark .cta-section{
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+body.dark .cta-intro{
+    color: var(--text-main);
+}
+
+/* CTA Button */
+body.dark .cta-btn{
+    background: var(--btn-bg);
+    color: var(--btn-text);
+}
+
+body.dark .cta-btn:hover{
+    background: var(--text-muted);
+    color: var(--btn-text);
+}
+
+body.dark .step-card,
+body.dark .why-card{
+    transition: 0.3s;
+}
+
+body.dark .step-card:hover,
+body.dark .why-card:hover{
+    background: var(--hover-bg);
+}
+
+/* ================= LOGIN PAGE DARK MODE ================= */
+
+body.dark .login-main{
+    background: var(--bg-main);
+}
+
+/* Login Card */
+body.dark .login-card{
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+/* Heading */
+body.dark .login-card h2{
+    color: var(--text-secondary);
+}
+
+/* Description text */
+body.dark .login-text{
+    color: var(--text-muted);
+}
+
+/* Labels */
+body.dark .login-group label{
+    color: var(--text-secondary);
+}
+
+/* Inputs */
+body.dark .login-group input{
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+body.dark .login-group input::placeholder{
+    color: var(--text-muted);
+}
+
+body.dark .login-group input:focus{
+    outline: none;
+    border: 1px solid var(--text-secondary);
+    background: var(--bg-secondary);
+}
+
+/* Login Button */
+body.dark .login-btn{
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+}
+
+body.dark .login-btn:hover{
+    background: var(--text-muted);
+    color: var(--btn-text);
+}
+
+/* Links */
+body.dark .login-forgot,
+body.dark .existing-account{
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+body.dark .login-forgot:hover,
+body.dark .existing-account:hover{
+    color: var(--text-secondary);
+}
+
+/* Slash text */
+body.dark .login-card span{
+    color: var(--text-muted);
+}
+
+/* Dark mode password eye icon fix */
+body.dark input[type="password"]::-webkit-textfield-decoration-container{
+    filter: invert(1);
+}
+
+body.dark input[type="password"]::-ms-reveal{
+    filter: invert(1);
+}
+
+body.dark input[type="password"]::-ms-clear{
+    filter: invert(1);
+}
