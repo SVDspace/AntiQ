@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollBtn.style.borderRadius = "8px";
     scrollBtn.style.cursor = "pointer";
     scrollBtn.style.display = "none";
+    scrollBtn.style.backgroundColor = "#2d3643";
+    scrollBtn.style.color = "white";
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {

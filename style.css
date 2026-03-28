@@ -244,10 +244,20 @@ a {
     color: var(--color-primary-dark);
 }
 
+.btn-primary:hover{
+    background: var(--color-muted);
+}
+
 .btn-outline {
     border: 2px solid var(--color-light);
     color: var(--color-light);
 }
+
+.btn-outline:hover{
+    background: var(--color-light);
+    color:var(--color-primary-dark);
+}
+
 
 /* Sections */
 .section {
@@ -306,12 +316,17 @@ a {
     gap: 28px;
 }
 
-.card,
+.how-card,
 .split-card {
     background: var(--color-light);
     padding: 32px;
     border-radius: 16px;
     box-shadow: 0 12px 30px rgba(11, 31, 51, 0.12);
+}
+.how-card:hover,
+.split-card:hover {
+    background: var(--color-muted);
+    transform: translateY(-4px); 
 }
 
 /* CTA */
@@ -1608,7 +1623,7 @@ body.dark .how {
 
 /* ================= CARDS ================= */
 
-body.dark .card,
+body.dark .how-card,
 body.dark .split-card,
 body.dark .login-card,
 body.dark .token-form-card,
@@ -1622,7 +1637,7 @@ body.dark .legal-box {
     box-shadow: none;
 }
 
-body.dark .card:hover,
+body.dark .how-card:hover,
 body.dark .split-card:hover {
     background: var(--hover-bg);
     transform: translateY(-4px);
@@ -1771,7 +1786,7 @@ body.dark .token-submit{
 
 body.dark .btn-primary-token:hover,
 body.dark .token-submit:hover{
-    background:var(--hover-bg);
+    background:var(--text-muted);
 }
 
 body.dark ul li{
@@ -1783,31 +1798,26 @@ body.dark .token-info-card li{
     color:var(--text-secondary);
 }
 
-/* smooth transition */
 body.dark .book-token-page *{
     transition:0.3s ease;
 }
 
-/* fix select dropdown dark mode */
 body.dark select{
     background:var(--bg-secondary);
     color:var(--text-main);
     border:1px solid var(--border-color);
 }
 
-/* dropdown options */
 body.dark select option{
     background:var(--bg-card);
     color:var(--text-main);
 }
 
-/* textarea fix */
 body.dark textarea{
     background:var(--bg-secondary);
     color:var(--text-main);
 }
 
-/* input focus fix */
 body.dark input:focus,
 body.dark select:focus,
 body.dark textarea:focus{
@@ -1817,14 +1827,12 @@ body.dark textarea:focus{
     border:1px solid var(--border-color);
 }
 
-/* date input dark mode fix */
 body.dark input[type="date"]{
     background:var(--bg-secondary);
     color:var(--text-main);
     border:1px solid var(--border-color);
 }
 
-/* calendar icon white */
 body.dark input[type="date"]::-webkit-calendar-picker-indicator{
     filter:invert(1);
     cursor:pointer;
@@ -1868,11 +1876,5 @@ body.dark .card button{
 }
 
 body.dark .card button:hover{
-    background:var(--text-main);
-}
-
-/* smooth transition */
-body.dark .card,
-body.dark .card *{
-    transition:0.3s ease;
+    background:var(--text-muted);
 }
