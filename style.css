@@ -427,7 +427,7 @@ a {
     align-items: center;
 }
 
-.social-links {
+.social-links{
     text-align: center;
     margin-top: 10px;
 }
@@ -448,6 +448,7 @@ a {
     color: white;
 }
 .footer p:hover {
+    cursor: pointer;
     color: white;
 }
 /* ===== Responsive ===== */
