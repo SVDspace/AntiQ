@@ -59,15 +59,16 @@
                 </div>
 
                 <!-- Usage Type -->
-                <label class="fb-label">🧭 What did you use AntiQ for?</label>
-                <select class="fb-input">
-                    <option>Select facility</option>
-                    <option>Hospital Visit</option>
-                    <option>Bank Visit</option>
-                    <option>Salon / Service Center</option>
-                    <option>College / Office</option>
-                    <option>Other</option>
-                </select>
+             <label class="fb-label">🧭 What did you use AntiQ for?</label>
+
+<select class="fb-input" id="facility">
+    <option value="" disabled selected hidden>Select facility</option>
+    <option value="hospital">Hospital Visit</option>
+    <option value="bank">Bank Visit</option>
+    <option value="salon">Salon / Service Center</option>
+    <option value="college">College / Office</option>
+    <option value="other">Other</option>
+</select>
 
                 <!-- Experience Questions -->
                 <label class="fb-label">⏱️ Did AntiQ reduce your waiting time?</label>
@@ -174,6 +175,7 @@
             <p> © 2026 AntiQ. All rights reserved. </p>
     </footer>
     <script src="/AntiQ/main.js"></script>
+    <script src="Feedback.js"></script>
 </body>
 
 </html>
