@@ -444,7 +444,12 @@ a {
     color: white;
     transform: translateY(-2px);
 }
-
+.footer a:hover {
+    color: white;
+}
+.footer p:hover {
+    color: white;
+}
 /* ===== Responsive ===== */
 @media (max-width: 1200px) and (min-width: 768px) {
 
