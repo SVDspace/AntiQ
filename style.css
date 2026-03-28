@@ -1714,6 +1714,14 @@ body.dark .footer a:hover {
     color: var(--text-main);
 }
 
+body.dark .footer p {
+    color: var(--text-muted);
+}
+
+body.dark .footer p:hover {
+    color: var(--text-main);
+}
+
 body.dark .footer-bottom {
     border-top: 1px solid var(--border-color);
 }
