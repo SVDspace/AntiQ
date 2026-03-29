@@ -43,6 +43,21 @@ a {
     padding: 0 20px;
 }
 
+/* Animations */
+
+.animate-fade,
+.animate-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 0.8s ease;
+}
+
+.animate-fade.show,
+.animate-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
     background: var(--color-dark);
@@ -347,21 +362,6 @@ a {
 .cta p {
     margin: 16px 0 34px;
     color: var(--color-muted);
-}
-
-/* Animations */
-
-.animate-fade,
-.animate-up {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: all 0.8s ease;
-}
-
-.animate-fade.show,
-.animate-up.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* ===== FOOTER ===== */
