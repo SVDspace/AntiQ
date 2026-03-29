@@ -2187,3 +2187,41 @@ body.dark .fb-btn:hover {
 body.dark .fb-privacy {
     color: var(--text-muted);
 }
+
+/*help centre page=========*/
+/* Hero Section */
+body.dark .hc-hero {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+body.dark .hc-hero p {
+    color: var(--text-muted);
+}
+
+body.dark .hc-faq {
+    background: var(--bg-card);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Each item */
+body.dark .hc-item {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+/* Question */
+body.dark .hc-question {
+    background: transparent; /* remove white feel */
+    color: var(--text-main);
+}
+
+/* Answer */
+body.dark .hc-answer {
+    background: var(--bg-main);
+    color: var(--text-muted);
+}
