@@ -2256,6 +2256,7 @@ body.dark .policy-card {
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
 }
 
 /* Headings inside cards */
@@ -2273,8 +2274,14 @@ body.dark .policy-card ul li {
     color: var(--text-muted);
 }
 
+main.privacy-container h2::before {
+    background: var(--text-main);
+    
+}
 /* Optional: hover effect (modern feel) */
 body.dark .policy-card:hover {
     transform: translateY(-2px);
     transition: 0.3s ease;
+    background: var(--hover-bg);
+    box-shadow: none
 }
