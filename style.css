@@ -2207,6 +2207,9 @@ body.dark .hc-faq {
 }
 
 /* Each item */
+body.dark .hc-section-title{
+    border-left: 5px solid var(--text-main);
+}
 body.dark .hc-item {
     background: var(--bg-secondary);
     border-radius: 8px;
