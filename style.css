@@ -2113,3 +2113,77 @@ body.dark .legal-block p,
 body.dark .legal-block li{
     color: var(--color-muted);
 }
+
+/* ===== FEEDBACK PAGE ===== */
+body.dark .fb-wrapper {
+    background: var(--bg-main);
+}
+
+body.dark .fb-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .fb-title {
+    color: var(--text-main);
+}
+
+body.dark .fb-subtitle {
+    color: var(--text-secondary);
+}
+
+/* Labels */
+body.dark .fb-label {
+    color: var(--text-secondary);
+}
+
+/* Inputs + textarea */
+body.dark .fb-input {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+body.dark .fb-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Select */
+body.dark select.fb-input {
+    background: var(--bg-secondary);
+    color: var(--text-main);
+}
+
+/* Radio options */
+body.dark .fb-options label {
+    color: var(--text-secondary);
+}
+
+/* Rating boxes */
+body.dark .fb-rating label {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+/* Active rating */
+body.dark .fb-rating input:checked + label {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+}
+
+/* Button */
+body.dark .fb-btn {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+}
+
+body.dark .fb-btn:hover {
+    background: var(--text-muted);
+    color: var(--bg-main);
+}
+
+/* Privacy text */
+body.dark .fb-privacy {
+    color: var(--text-muted);
+}
