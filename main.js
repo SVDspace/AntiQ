@@ -1,32 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =================== THEME TOGGLE ===================== */
-    const body = document.body;
-    const themeToggle = document.querySelector(".theme-toggle input");
+    // ===== THEME TOGGLE SYSTEM =====
+    const toggle = document.querySelector(".theme-toggle input");
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem("antiq-theme");
+    // Sync toggle UI on load
+    function applySavedTheme() {
+        const theme = localStorage.getItem("theme");
 
-    if (savedTheme === "light") {
-        body.classList.remove("dark");
-        themeToggle.checked = false;
-    }
-    else {
-        body.classList.add("dark");
-        themeToggle.checked = true;
-    }
-
-    // Toggle theme
-    themeToggle.addEventListener("change", () => {
-        if (themeToggle.checked) {
-            body.classList.add("dark");
-            localStorage.setItem("antiq-theme", "dark");
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+            if (toggle) toggle.checked = true;
         } else {
-            body.classList.remove("dark");
-            localStorage.setItem("antiq-theme", "light");
+            document.documentElement.classList.remove("dark");
+            if (toggle) toggle.checked = false;
         }
-    });
+    }
 
+    // Toggle click
+    function handleToggle() {
+        if (!toggle) return;
+
+        toggle.addEventListener("change", () => {
+            if (toggle.checked) {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
+
+    // INIT
+    applySavedTheme();
+    handleToggle();
     /* ===============SCROLL ANIMATIONS=============== */
 
     const animatedElements = document.querySelectorAll(
@@ -87,8 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =============== SCROLL TO TOP BTN================== */
 
     const scrollBtn = document.createElement("button");
-    scrollBtn.innerText ="⬆"
-    scrollBtn.style.fontSize="25px";
+    scrollBtn.innerText = "⬆"
+    scrollBtn.style.fontSize = "25px";
     scrollBtn.classList.add("scroll-top-btn");
 
     document.body.appendChild(scrollBtn);

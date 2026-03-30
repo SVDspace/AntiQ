@@ -11,6 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        (function () {
+            try {
+                const theme = localStorage.getItem("theme");
+                if (theme === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            } catch (e) { }
+        })();
+    </script>
 </head>
 </head>
 
@@ -25,9 +36,9 @@
 
             <ul class="nav-links">
                 <li><a href="/AntiQ/index.html">Home</a></li>
-                <li><a href="/AntiQ/BookToken.html">Book Token</a></li>
-                <li><a href="/AntiQ/checkStatus.html">Check Status</a></li>
-                <li><a href="/AntiQ/AboutUs.html">About Us</a></li>
+                <li><a href="/AntiQ/book-token.html">Book Token</a></li>
+                <li><a href="/AntiQ/check-status.html">Check Status</a></li>
+                <li><a href="/AntiQ/about-us.html">About Us</a></li>
                 <li><a href="/AntiQ/login.html">Sign In / Sign Up</a></li>
             </ul>
 
@@ -46,8 +57,8 @@
     </nav>
 
 
-<!-- ================= MAIN ================= -->
- 
+    <!-- ================= MAIN ================= -->
+
     <section class="hc-hero">
         <h1>Need help with AntiQ?</h1>
         <p>We’re here to make your queue experience smooth and stress-free</p>
@@ -205,28 +216,28 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="/AntiQ/index.html">Home</a></li>
-                    <li><a href=" /AntiQ/BookToken.html">Book Token</a></li>
-                    <li><a href=" /AntiQ/checkStatus.html">Check Status</a></li>
+                    <li><a href=" /AntiQ/book-token.html">Book Token</a></li>
+                    <li><a href=" /AntiQ/check-status.html">Check Status</a></li>
                     <li><a href=" /AntiQ/login.html">Sign In / Sign Up</a></li>
                 </ul>
             </div>
 
             <!-- Column 2 -->
             <div class=" footer-column">
-                            <h4>Explore</h4>
-                            <ul>
-                                  <li><a href="/AntiQ/FAQ.html">FAQs</li>
-                                <li><a href="AboutUs.html#why-choose">Why Choose AntiQ?</li>
-                                <li><a href="AboutUs.html#working">How it works?</a></li>
-                            </ul>
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/AntiQ/faqs.html">FAQs</li>
+                    <li><a href="about-us.html#why-choose">Why Choose AntiQ?</li>
+                    <li><a href="about-us.html#working">How it works?</a></li>
+                </ul>
             </div>
 
             <!-- Column 3 -->
             <div class="footer-column">
                 <h4>Policies</h4>
                 <ul>
-                    <li><a href="/AntiQ/PrivacyPolicy.html">Privacy Policy</a></li>
-                    <li><a href="/AntiQ/T&C.html">Terms and Conditions</a></li>
+                    <li><a href="/AntiQ/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/AntiQ/terms-and-conditions.html">Terms and Conditions</a></li>
                 </ul>
             </div>
 
@@ -236,8 +247,8 @@
                 <ul>
                     <p>Email: support@antiq.com</p>
                     <p>Phone: +91-XXXXXXXXXX</p>
-                    <li><a href="/AntiQ/Feedback.html">Feedback</a></li>
-                    <li><a href="/AntiQ/HelpCenter.html">Help Center</a></li>
+                    <li><a href="/AntiQ/feedback.html">Feedback</a></li>
+                    <li><a href="/AntiQ/help-center.html">Help Center</a></li>
                 </ul>
             </div>
         </div>
