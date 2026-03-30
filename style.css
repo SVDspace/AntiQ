@@ -1557,7 +1557,7 @@ main.privacy-container .policy-card.highlight li {
 /* ================= DARK MODE ================= */
 
 /* Root Variables */
-body.dark {
+html.dark {
     --bg-main: #0e1117;
     --bg-secondary: #161b22;
     --bg-card: #1f2630;
@@ -1570,636 +1570,641 @@ body.dark {
     --hover-bg: #313b47;
 }
 
+html.dark body {
+   background: #0e1117;
+   color: #f0f1f3;
+}
+
 /* BASE */
 
-body.dark {
+html.dark {
     background: var(--bg-main);
     color: var(--text-main);
 }
 
 /* TEXT */
 
-body.dark h1,
-body.dark h2,
-body.dark h3 {
+html.dark h1,
+html.dark h2,
+html.dark h3 {
     color: var(--text-main);
 }
 
-body.dark p {
+html.dark p {
     color: var(--text-secondary);
 }
 
-body.dark .section-text,
-body.dark .login-text,
-body.dark .form-sub {
+html.dark .section-text,
+html.dark .login-text,
+html.dark .form-sub {
     color: var(--text-muted);
 }
 
 /* ========= NAVBAR ============= */
 
-body.dark .navbar {
+html.dark .navbar {
     background: var(--bg-main);
     border-bottom: 1px solid var(--border-color);
 }
 
-body.dark .nav-links a {
+html.dark .nav-links a {
     color: var(--text-secondary);
 }
 
-body.dark .nav-links a:hover {
+html.dark .nav-links a:hover {
     color: var(--text-main);
 }
 
 /* HERO */
 
-body.dark .hero {
+html.dark .hero {
     background: linear-gradient(180deg, var(--bg-card), var(--bg-main));
 }
 
-body.dark .hero-badge {
+html.dark .hero-badge {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
 }
 
 /* SECTIONS */
 
-body.dark .about,
-body.dark .how {
+html.dark .about,
+html.dark .how {
     background: var(--bg-secondary);
 }
 
 /* CARDS */
 
-body.dark .how-card,
-body.dark .split-card,
-body.dark .login-card,
-body.dark .token-form-card,
-body.dark .check-status-page .card,
-body.dark .fb-card,
-body.dark .faq-container,
-body.dark .legal-box {
+html.dark .how-card,
+html.dark .split-card,
+html.dark .login-card,
+html.dark .token-form-card,
+html.dark .check-status-page .card,
+html.dark .fb-card,
+html.dark .faq-container,
+html.dark .legal-box {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
     box-shadow: none;
 }
 
-body.dark .how-card:hover,
-body.dark .split-card:hover {
+html.dark .how-card:hover,
+html.dark .split-card:hover {
     background: var(--hover-bg);
     transform: translateY(-4px);
 }
 
 /* PILLS */
 
-body.dark .pill {
+html.dark .pill {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
 }
 
-body.dark .pill:hover {
+html.dark .pill:hover {
     background: var(--hover-bg);
     color: var(--text-main);
 }
 
 /* BUTTONS */
 
-body.dark .btn-primary {
+html.dark .btn-primary {
     background: var(--btn-bg);
     color: var(--btn-text);
 }
 
-body.dark .btn-primary:hover {
+html.dark .btn-primary:hover {
     opacity: 0.7;
 }
 
-body.dark .btn-outline {
+html.dark .btn-outline {
     border: 1px solid var(--text-main);
     color: var(--text-main);
 }
 
-body.dark .btn-outline:hover {
+html.dark .btn-outline:hover {
     background: var(--text-main);
     color: var(--btn-text);
 }
 
 /* INPUTS */
 
-body.dark input,
-body.dark textarea,
-body.dark select {
+html.dark input,
+html.dark textarea,
+html.dark select {
     background: var(--bg-main);
     border: 1px solid var(--border-color);
     color: var(--text-main);
 }
 
-body.dark input:focus,
-body.dark textarea:focus,
-body.dark select:focus {
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
     border-color: var(--text-main);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 
 /* ================= FOOTER ================= */
 
-body.dark .footer {
+html.dark .footer {
     background: var(--bg-main);
     border-top: 1px solid var(--border-color);
 }
 
-body.dark .footer h3,
-body.dark .footer h4 {
+html.dark .footer h3,
+html.dark .footer h4 {
     color: var(--text-main);
 }
 
-body.dark .footer a {
+html.dark .footer a {
     color: var(--text-muted);
 }
 
-body.dark .footer a:hover {
+html.dark .footer a:hover {
     color: var(--text-main);
 }
 
-body.dark .footer p {
+html.dark .footer p {
     color: var(--text-muted);
 }
 
-body.dark .footer p:hover {
+html.dark .footer p:hover {
     color: var(--text-main);
 }
 
-body.dark .footer-bottom {
+html.dark .footer-bottom {
     border-top: 1px solid var(--border-color);
 }
 
-body.dark .column1 {
+html.dark .column1 {
     border-right: 1px solid var(--border-color);
 }
 
 /* CTA */
 
-body.dark .cta {
+html.dark .cta {
     background: linear-gradient(180deg, var(--bg-card), var(--bg-main));
 }
 
-body.dark .cta p {
+html.dark .cta p {
     color: var(--text-muted);
 }
 
 /* ================= BOOK TOKEN DARK MODE ================= */
 
-body.dark .book-token-page{
+html.dark .book-token-page{
     background:var(--bg-main);
     color:var(--text-main);
 }
 
-body.dark .token-form-card,
-body.dark .token-info-card{
+html.dark .token-form-card,
+html.dark .token-info-card{
     background:var(--bg-card);
     border:1px solid var(--border-color);
 }
 
-body.dark .token-form-card h2,
-body.dark .token-info-card h3{
+html.dark .token-form-card h2,
+html.dark .token-info-card h3{
     color:var(--text-secondary);
 }
 
-body.dark .form-sub{
+html.dark .form-sub{
     color:var(--text-muted);
 }
 
-body.dark .hint{
+html.dark .hint{
     color:var(--text-muted);
 }
 
-body.dark input,
-body.dark select,
-body.dark textarea{
+html.dark input,
+html.dark select,
+html.dark textarea{
     background:var(--bg-secondary);
     color:var(--text-main);
     border:1px solid var(--border-color);
 }
 
-body.dark input::placeholder,
-body.dark textarea::placeholder{
+html.dark input::placeholder,
+html.dark textarea::placeholder{
     color:var(--text-muted);
 }
 
-body.dark .info-box{
+html.dark .info-box{
     background:var(--bg-secondary);
     border:1px solid var(--border-color);
     color:var(--text-secondary);
 }
 
-body.dark .btn-primary-token,
-body.dark .token-submit{
+html.dark .btn-primary-token,
+html.dark .token-submit{
     background:var(--btn-bg);
     color:var(--btn-text);
     border:none;
 }
 
-body.dark .btn-primary-token:hover,
-body.dark .token-submit:hover{
+html.dark .btn-primary-token:hover,
+html.dark .token-submit:hover{
     background:var(--text-muted);
 }
 
-body.dark ul li{
+html.dark ul li{
     color:var(--text-secondary);
 }
 
-body.dark .token-form-card label,
-body.dark .token-info-card li{
+html.dark .token-form-card label,
+html.dark .token-info-card li{
     color:var(--text-secondary);
 }
 
-body.dark .book-token-page *{
+html.dark .book-token-page *{
     transition:0.3s ease;
 }
 
-body.dark select{
+html.dark select{
     background:var(--bg-secondary);
     color:var(--text-main);
     border:1px solid var(--border-color);
 }
 
-body.dark select option{
+html.dark select option{
     background:var(--bg-card);
     color:var(--text-main);
 }
 
-body.dark textarea{
+html.dark textarea{
     background:var(--bg-secondary);
     color:var(--text-main);
 }
 
-body.dark input:focus,
-body.dark select:focus,
-body.dark textarea:focus{
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus{
     background:var(--bg-secondary);
     color:var(--text-main);
     outline:none;
     border:1px solid var(--border-color);
 }
 
-body.dark input[type="date"]{
+html.dark input[type="date"]{
     background:var(--bg-secondary);
     color:var(--text-main);
     border:1px solid var(--border-color);
 }
 
-body.dark input[type="date"]::-webkit-calendar-picker-indicator{
+html.dark input[type="date"]::-webkit-calendar-picker-indicator{
     filter:invert(1);
     cursor:pointer;
 }
 
 /* ================= CHECK STATUS DARK MODE ================= */
 
-body.dark.check-status-page{
+html.dark.check-status-page{
     background:var(--bg-main);
     color:var(--text-main);
 }
 
-body.dark .card{
+html.dark .card{
     background:var(--bg-card);
     border:1px solid var(--border-color);
     color:var(--text-main);
 }
 
-body.dark .card h2{
+html.dark .card h2{
     color:var(--text-secondary);
 }
 
-body.dark .card p{
+html.dark .card p{
     color:var(--text-muted);
 }
 
-body.dark .card input{
+html.dark .card input{
     background:var(--bg-secondary);
     color:var(--text-main);
     border:1px solid var(--border-color);
 }
 
-body.dark .card input::placeholder{
+html.dark .card input::placeholder{
     color:var(--text-muted);
 }
 
-body.dark .card button{
+html.dark .card button{
     background:var(--btn-bg);
     color:var(--btn-text);
     border:none;
 }
 
-body.dark .card button:hover{
+html.dark .card button:hover{
     background:var(--text-muted);
 }
 
 /* ================= ABOUT PAGE DARK MODE ================= */
 
 /* Main Background */
-body.dark .about-main{
+html.dark .about-main{
     background: var(--bg-main);
     color: var(--text-main);
 }
 
 /* Intro Section */
-body.dark .intro h1{
+html.dark .intro h1{
     color: var(--text-secondary);
 }
 
-body.dark .intro p{
+html.dark .intro p{
     color: var(--text-muted);
 }
 
 /* How it works sections */
-body.dark .how-it-works h2{
+html.dark .how-it-works h2{
     color: var(--text-secondary);
 }
 
 /* Step cards */
-body.dark .step-card{
+html.dark .step-card{
     background: var(--bg-card);
     border: 1px solid var(--border-color);
 }
 
-body.dark .step-card h3{
+html.dark .step-card h3{
     color: var(--text-secondary);
 }
 
-body.dark .step-card p{
+html.dark .step-card p{
     color: var(--text-muted);
 }
 
 /* Step number circle */
-body.dark .step-number{
+html.dark .step-number{
     background: var(--hover-bg);
     color: var(--text-main);
 }
 
 /* Divider line */
-body.dark hr{
+html.dark hr{
     border: 1px solid var(--border-color);
 }
 
 /* Why choose section */
-body.dark .why-service h2{
+html.dark .why-service h2{
     color: var(--text-secondary);
 }
 
-body.dark .why-card{
+html.dark .why-card{
     background: var(--bg-card);
     border: 1px solid var(--border-color);
 }
 
-body.dark .why-card h3{
+html.dark .why-card h3{
     color: var(--text-secondary);
 }
 
-body.dark .why-card p{
+html.dark .why-card p{
     color: var(--text-muted);
 }
 
 /* CTA section */
-body.dark .cta-section{
+html.dark .cta-section{
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
 }
 
-body.dark .cta-intro{
+html.dark .cta-intro{
     color: var(--text-main);
 }
 
 /* CTA Button */
-body.dark .cta-btn{
+html.dark .cta-btn{
     background: var(--btn-bg);
     color: var(--btn-text);
 }
 
-body.dark .cta-btn:hover{
+html.dark .cta-btn:hover{
     background: var(--text-muted);
     color: var(--btn-text);
 }
 
-body.dark .step-card,
-body.dark .why-card{
+html.dark .step-card,
+html.dark .why-card{
     transition: 0.3s;
 }
 
-body.dark .step-card:hover,
-body.dark .why-card:hover{
+html.dark .step-card:hover,
+html.dark .why-card:hover{
     background: var(--hover-bg);
 }
 
 /* ================= LOGIN PAGE DARK MODE ================= */
 
-body.dark .login-main{
+html.dark .login-main{
     background: var(--bg-main);
 }
 
 /* Login Card */
-body.dark .login-card{
+html.dark .login-card{
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-main);
 }
 
 /* Heading */
-body.dark .login-card h2{
+html.dark .login-card h2{
     color: var(--text-secondary);
 }
 
 /* Description text */
-body.dark .login-text{
+html.dark .login-text{
     color: var(--text-muted);
 }
 
 /* Labels */
-body.dark .login-group label{
+html.dark .login-group label{
     color: var(--text-secondary);
 }
 
 /* Inputs */
-body.dark .login-group input{
+html.dark .login-group input{
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     color: var(--text-main);
 }
 
-body.dark .login-group input::placeholder{
+html.dark .login-group input::placeholder{
     color: var(--text-muted);
 }
 
-body.dark .login-group input:focus{
+html.dark .login-group input:focus{
     outline: none;
     border: 1px solid var(--text-secondary);
     background: var(--bg-secondary);
 }
 
 /* Login Button */
-body.dark .login-btn{
+html.dark .login-btn{
     background: var(--btn-bg);
     color: var(--btn-text);
     border: none;
 }
 
-body.dark .login-btn:hover{
+html.dark .login-btn:hover{
     background: var(--text-muted);
     color: var(--btn-text);
 }
 
 /* Links */
-body.dark .login-forgot,
-body.dark .existing-account{
+html.dark .login-forgot,
+html.dark .existing-account{
     color: var(--text-muted);
     text-decoration: none;
 }
 
-body.dark .login-forgot:hover,
-body.dark .existing-account:hover{
+html.dark .login-forgot:hover,
+html.dark .existing-account:hover{
     color: var(--text-secondary);
 }
 
 /* Slash text */
-body.dark .login-card span{
+html.dark .login-card span{
     color: var(--text-muted);
 }
 
 /* Dark mode password eye icon */
-body.dark input[type="password"]::-webkit-textfield-decoration-container{
+html.dark input[type="password"]::-webkit-textfield-decoration-container{
     filter: invert(1);
 }
 
-body.dark input[type="password"]::-ms-reveal{
+html.dark input[type="password"]::-ms-reveal{
     filter: invert(1);
 }
 
-body.dark input[type="password"]::-ms-clear{
+html.dark input[type="password"]::-ms-clear{
     filter: invert(1);
 }
 
 /* ===== FAQ ===== */
 
-body.dark .faq-container {
+html.dark .faq-container {
     background: var(--bg-secondary);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-body.dark .faq-page-title {
+html.dark .faq-page-title {
     color: var(--text-main);
 }
 
 /* Question */
-body.dark .faq-question {
+html.dark .faq-question {
     background: var(--bg-card);
     color: var(--text-secondary);
 }
 
 /* Answer */
-body.dark .faq-answer {
+html.dark .faq-answer {
     background: var(--bg-main);
     color: var(--text-muted);
     border-left: 4px solid var(--text-secondary);
 }
 
 /* Hover state */
-body.dark .faq-item:hover .faq-question {
+html.dark .faq-item:hover .faq-question {
     background: var(--text-secondary);
     color: var(--bg-main);
 }
 
 /* ======= T&C PAGE =======*/
-body.dark .legal-updated,
-body.dark .legal-block p,
-body.dark .legal-block li{
+html.dark .legal-updated,
+html.dark .legal-block p,
+html.dark .legal-block li{
     color: var(--color-muted);
 }
 
 /* ===== FEEDBACK PAGE ===== */
-body.dark .fb-wrapper {
+html.dark .fb-wrapper {
     background: var(--bg-main);
 }
 
-body.dark .fb-card {
+html.dark .fb-card {
     background: var(--bg-card);
     border: 1.5px solid var(--border-color);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
 }
 
-body.dark .fb-title {
+html.dark .fb-title {
     color: var(--text-main);
 }
 
-body.dark .fb-subtitle {
+html.dark .fb-subtitle {
     color: var(--text-secondary);
 }
 
 /* Labels */
-body.dark .fb-label {
+html.dark .fb-label {
     color: var(--text-secondary);
 }
 
 /* Inputs + textarea */
-body.dark .fb-input {
+html.dark .fb-input {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     color: var(--text-main);
 }
 
-body.dark .fb-input::placeholder {
+html.dark .fb-input::placeholder {
     color: var(--text-muted);
 }
 
 /* Select */
-body.dark select.fb-input {
+html.dark select.fb-input {
     background: var(--bg-secondary);
     color: var(--text-main);
 }
 
 /* Radio options */
-body.dark .fb-options label {
+html.dark .fb-options label {
     color: var(--text-secondary);
 }
 
 /* Rating boxes */
-body.dark .fb-rating label {
+html.dark .fb-rating label {
     background: var(--bg-secondary);
     color: var(--text-secondary);
 }
 
 /* Active rating */
-body.dark .fb-rating input:checked + label {
+html.dark .fb-rating input:checked + label {
     background: var(--btn-bg);
     color: var(--btn-text);
 }
 
 /* Button */
-body.dark .fb-btn {
+html.dark .fb-btn {
     background: var(--btn-bg);
     color: var(--btn-text);
 }
 
-body.dark .fb-btn:hover {
+html.dark .fb-btn:hover {
     background: var(--text-muted);
     color: var(--bg-main);
 }
 
 /* Privacy text */
-body.dark .fb-privacy {
+html.dark .fb-privacy {
     color: var(--text-muted);
 }
 
 /* ===== HELP CENTRE DARK MODE ===== */
 /* Hero Section */
-body.dark .hc-hero {
+html.dark .hc-hero {
     background: var(--bg-main);
     color: var(--text-main);
 }
 
-body.dark .hc-hero p {
+html.dark .hc-hero p {
     color: var(--text-muted);
 }
 
-body.dark .hc-faq {
+html.dark .hc-faq {
     background: var(--bg-card);
     padding: 15px;
     border-radius: 10px;
@@ -2207,10 +2212,10 @@ body.dark .hc-faq {
 }
 
 /* Each item */
-body.dark .hc-section-title{
+html.dark .hc-section-title{
     border-left: 5px solid var(--text-main);
 }
-body.dark .hc-item {
+html.dark .hc-item {
     background: var(--bg-secondary);
     border-radius: 8px;
     margin-bottom: 10px;
@@ -2218,13 +2223,13 @@ body.dark .hc-item {
 }
 
 /* Question */
-body.dark .hc-question {
+html.dark .hc-question {
     background: transparent; /* remove white feel */
     color: var(--text-main);
 }
 
 /* Answer */
-body.dark .hc-answer {
+html.dark .hc-answer {
     background: var(--bg-main);
     color: var(--text-muted);
 }
@@ -2232,24 +2237,24 @@ body.dark .hc-answer {
 /* ===== PRIVACY POLICY DARK MODE ===== */
 
 /* Main container */
-body.dark .privacy-container {
+html.dark .privacy-container {
     background: var(--bg-secondary);
     padding: 20px;
     border-radius: 10px;
 }
 
 /* Page title */
-body.dark .privacy-container h1 {
+html.dark .privacy-container h1 {
     color: var(--text-main);
 }
 
 /* Last updated text */
-body.dark .last-updated {
+html.dark .last-updated {
     color: var(--text-muted);
 }
 
 /* Policy cards (IMPORTANT - removes white boxes) */
-body.dark .policy-card {
+html.dark .policy-card {
     background: var(--bg-card);
     color: var(--text-secondary);
     padding: 18px;
@@ -2260,17 +2265,17 @@ body.dark .policy-card {
 }
 
 /* Headings inside cards */
-body.dark .policy-card h2 {
+html.dark .policy-card h2 {
     color: var(--text-main);
 }
 
 /* Paragraph text */
-body.dark .policy-card p {
+html.dark .policy-card p {
     color: var(--text-muted);
 }
 
 /* Lists */
-body.dark .policy-card ul li {
+html.dark .policy-card ul li {
     color: var(--text-muted);
 }
 
@@ -2279,7 +2284,7 @@ main.privacy-container h2::before {
     
 }
 /* Optional: hover effect (modern feel) */
-body.dark .policy-card:hover {
+html.dark .policy-card:hover {
     transform: translateY(-2px);
     transition: 0.3s ease;
     background: var(--hover-bg);
