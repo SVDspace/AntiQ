@@ -58,15 +58,19 @@
         </div>
     </nav>
 
-
     <!-- ================= MAIN ================= -->
 
     <main>
         <div class="card">
             <h2>Check Your Queue Status</h2>
             <p>Enter your booking ID to view your current queue status</p>
-            <input type="text" placeholder="Enter Booking ID">
-            <button>Check Status</button>
+            <!-- <input type="text" placeholder="Enter Booking ID">
+            <button>Check Status</button> -->
+            <input type="text" id="bookingId" placeholder="Enter Booking ID">
+
+            <button id="checkBtn">Check Status</button>
+
+            <p id="result"></p>
         </div>
     </main>
 
@@ -133,6 +137,7 @@
         </div>
     </footer>
     <script src="/AntiQ/main.js"></script>
+    <script src="/AntiQ/checkStatus.js"></script>
 </body>
 
 </html>
