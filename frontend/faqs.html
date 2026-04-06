@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiQ | FAQs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        (function () {
+            try {
+                const theme = localStorage.getItem("theme");
+                if (theme === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            } catch (e) { }
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="container">
+
+            <h1 class="logo">AntiQ</h1>
+
+            <input type="checkbox" id="nav-toggle-safe">
+
+            <ul class="nav-links">
+                <li><a href="/AntiQ/frontend/index.html">Home</a></li>
+                <li><a href="/AntiQ/frontend/book-token.html">Book Token</a></li>
+                <li><a href="/AntiQ/frontend/check-status.html">Check Status</a></li>
+                <li><a href="/AntiQ/frontend/about-us.html">About Us</a></li>
+                <li><a href="/AntiQ/frontend/login.html">Sign In / Sign Up</a></li>
+            </ul>
+
+            <div class="nav-actions">
+
+                <label class="theme-toggle">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+
+                <label for="nav-toggle-safe" class="menu-btn-safe">☰</label>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="faq-page-title">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq1">
+            <label for="faq1" class="faq-question">
+                What is the AntiQ?
+            </label>
+            <div class="faq-answer">
+                AntiQ is an online queue management system that allows users
+                to book tokens and track their queue status easily.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq2">
+            <label for="faq2" class="faq-question">
+                How can I book a token?
+            </label>
+            <div class="faq-answer">
+                You can book a token from the Book Token page by entering
+                the required details and receiving a booking ID.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq3">
+            <label for="faq3" class="faq-question">
+                How do I check my queue status?
+            </label>
+            <div class="faq-answer">
+                Visit the Check Status page and enter your booking ID
+                to see your current position in the queue.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq4">
+            <label for="faq4" class="faq-question">
+                Is login required?
+            </label>
+            <div class="faq-answer">
+                Login is not mandatory, but it helps you manage
+                and track your bookings more efficiently.
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div class="footer-column column1">
+                <h3 class="footer-logo">AntiQ</h3>
+                <ul>
+                    <p>"A digital approach to <br> efficient and transparent <br> queue management."</p>
+                </ul>
+            </div>
+
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/AntiQ/frontend/index.html">Home</a></li>
+                    <li><a href="/AntiQ/frontend/book-token.html">Book Token</a></li>
+                    <li><a href="/AntiQ/frontend/check-status.html">Check Status</a></li>
+                    <li><a href="/AntiQ/frontend/login.html">Sign In / Sign Up</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2 -->
+            <div class=" footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/AntiQ/frontend/faqs.html">FAQs</li>
+                    <li><a href="/AntiQ/frontend/about-us.html#why-choose">Why Choose AntiQ?</li>
+                    <li><a href="/AntiQ/frontend/about-us.html#working">How it works?</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="/AntiQ/frontend/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/AntiQ/frontend/terms-and-conditions.html">Terms and Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-column">
+                <h4>Contact & Support</h4>
+                <ul>
+                    <p>Email: support@antiq.com</p>
+                    <p>Phone: +91-XXXXXXXXXX</p>
+                    <li><a href="/AntiQ/frontend/feedback.html">Feedback</a></li>
+                    <li><a href="/AntiQ/frontend/help-center.html">Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></i></a>
+            </div>
+            <p> © 2026 AntiQ. All rights reserved. </p>
+        </div>
+    </footer>
+    <script src="/AntiQ/frontend/js/main.js"></script>
+    <script src="/AntiQ/frontend/js/faqs.js"></script>
+</body>
+
+</html>
