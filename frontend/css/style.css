@@ -2224,7 +2224,7 @@ html.dark .hc-item {
 
 /* Question */
 html.dark .hc-question {
-    background: transparent; /* remove white feel */
+    background: transparent;
     color: var(--text-main);
 }
 
@@ -2253,7 +2253,7 @@ html.dark .last-updated {
     color: var(--text-muted);
 }
 
-/* Policy cards (IMPORTANT - removes white boxes) */
+/* Policy cards */
 html.dark .policy-card {
     background: var(--bg-card);
     color: var(--text-secondary);
@@ -2283,10 +2283,17 @@ main.privacy-container h2::before {
     background: var(--text-main);
     
 }
-/* Optional: hover effect (modern feel) */
+/* hover effect */
 html.dark .policy-card:hover {
     transform: translateY(-2px);
     transition: 0.3s ease;
     background: var(--hover-bg);
     box-shadow: none
+}
+
+/*==== Responsive ====*/
+@media (max-width: 900px){
+    html.dark .nav-links{
+        background:#0e1117;
+    }
 }
