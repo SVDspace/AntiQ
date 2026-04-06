@@ -151,6 +151,7 @@ a {
 
     .navbar .container {
         flex-wrap: wrap;
+        padding: 30px;
     }
 
     .logo {
