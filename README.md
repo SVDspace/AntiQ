@@ -34,7 +34,7 @@ AntiQ is a web-based virtual queue management system designed for clinics, hospi
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** HTML, CSS, JavaScript, React, Tailwind CSS
+* **Frontend:** HTML, CSS, JavaScript, React
 * **Backend:** Node.js, Express.js
 * **Database:** MongoDB / MySQL
 * **Real-Time:** Socket.io (WebSockets)
@@ -48,9 +48,8 @@ AntiQ is a web-based virtual queue management system designed for clinics, hospi
 ```
 AntiQ/
 │
-├── client/        # Frontend (React)
-├── server/        # Backend (Node.js + Express)
-├── database/      # Database schemas / models
+├── frontend/        # Frontend (React)
+├── backend/        # Backend (Node.js + Express)
 ├── README.md
 ```
 
