@@ -1,4 +1,3 @@
-
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
@@ -16,6 +15,9 @@ console.log("Loaded MONGO_URI:", process.env.MONGO_URI);
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+const userRoutes = require("./routes/userRoutes");
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => res.send("Backend running"));
 
