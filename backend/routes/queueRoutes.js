@@ -4,8 +4,12 @@ const router = express.Router();
 
 const protect = require("../middleware/authMiddleware");
 
-const { createQueue } = require("../controllers/queueController");
+const { 
+    createQueue,
+    getQueues
+} = require("../controllers/queueController");
 
 router.post("/", protect, createQueue);
+router.get("/", protect, getQueues);
 
 module.exports = router;
