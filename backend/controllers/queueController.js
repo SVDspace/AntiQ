@@ -20,3 +20,21 @@ exports.createQueue = async (req, res) => {
 
   }
 };
+exports.getQueues = async (req, res) => {
+  try {
+
+    const queues = await Queue.find().populate(
+      "createdBy",
+      "name email"
+    );
+
+    res.json(queues);
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};
