@@ -38,3 +38,55 @@ exports.getQueues = async (req, res) => {
 
   }
 };
+
+// @desc Update queue
+
+const updateQueue = async (req, res) => {
+  try {
+    const queue = await Queue.findById(req.params.id);
+
+    if (!queue) {
+      return res.status(404).json({
+        message: "Queue not found",
+      });
+    }
+
+    queue.name = req.body.name || queue.name;
+    queue.description =
+      req.body.description || queue.description;
+    queue.status = req.body.status || queue.status;
+
+    const updatedQueue = await queue.save();
+
+    res.json(updatedQueue);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
+// @desc Delete queue
+// @route DELETE /api/queues/:id
+// @access Private
+const deleteQueue = async (req, res) => {
+  try {
+    const queue = await Queue.findById(req.params.id);
+
+    if (!queue) {
+      return res.status(404).json({
+        message: "Queue not found",
+      });
+    }
+
+    await queue.deleteOne();
+
+    res.json({
+      message: "Queue removed",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
