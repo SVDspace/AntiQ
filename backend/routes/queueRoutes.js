@@ -13,6 +13,7 @@ const {
 
 router.post("/", protect, createQueue);
 router.get("/", protect, getQueues);
-router.put("/:id",protect,updateQueue);
+router.get("/:id", protect, getQueueById);
+//router.put("/:id",protect,updateQueue);
 
 module.exports = router;
