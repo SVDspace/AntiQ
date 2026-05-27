@@ -39,6 +39,35 @@ exports.getQueues = async (req, res) => {
   }
 };
 
+exports.getQueueById = async (req, res) => {
+  try {
+
+    const queue = await Queue.findById(req.params.id).populate(
+      "createdBy",
+      "name email"
+    );
+
+    if (queue) {
+
+      res.json(queue);
+
+    } else {
+
+      res.status(404).json({
+        message: "Queue not found",
+      });
+
+    }
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};
+
 // @desc Update queue
 
 const updateQueue = async (req, res) => {
