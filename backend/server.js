@@ -33,3 +33,6 @@ const startServer = async () => {
 
 startServer();
 app.use("/api/queues", queueRoutes);
+
+const tokenRoutes = require("./routes/tokenRoutes");
+app.use("/api/tokens", tokenRoutes);
