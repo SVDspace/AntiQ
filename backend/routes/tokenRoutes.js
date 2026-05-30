@@ -4,6 +4,8 @@ const router = express.Router();
 
 const protect = require("../middleware/authMiddleware");
 
+const admin = require("../middleware/adminMiddleware");
+
 const {
   joinQueue,
   getMyTokens,
@@ -15,7 +17,7 @@ const {
 
 router.post("/:queueId", protect, joinQueue);
 router.get("/my", protect, getMyTokens);
-router.put("/serve/:queueId", protect, serveNextToken);
+router.put("/serve/:queueId", protect, admin, serveNextToken);
 router.put("/cancel/:id", protect, cancelToken);
 router.get("/:id", protect, getTokenById);
 router.get("/history/:queueId", protect, getQueueHistory);
