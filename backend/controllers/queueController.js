@@ -162,3 +162,34 @@ exports.deleteQueue = async (req, res) => {
   }
 
 };
+
+exports.getQueueStats = async (req, res) => {
+  try {
+
+    const queue = await Queue.findById(
+      req.params.id
+    );
+
+    if (!queue) {
+
+      return res.status(404).json({
+        message: "Queue not found",
+      });
+
+    }
+
+    res.json({
+      currentToken: queue.currentToken,
+      totalPeople: queue.totalPeople,
+      estimatedTimePerToken:
+        queue.estimatedTimePerToken,
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};

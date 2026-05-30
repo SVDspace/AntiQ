@@ -12,6 +12,20 @@ exports.joinQueue = async (req, res) => {
       });
     }
 
+    const existingToken = await Token.findOne({
+      user: req.user._id,
+      queue: queue._id,
+      status: "waiting",
+    });
+
+    if (existingToken) {
+
+      return res.status(400).json({
+        message: "Already in queue",
+      });
+
+    }
+
     const lastToken = await Token.findOne({
       queue: queue._id,
     }).sort({ tokenNumber: -1 });
@@ -39,6 +53,162 @@ exports.joinQueue = async (req, res) => {
     await queue.save();
 
     res.status(201).json(token);
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};
+
+exports.getMyTokens = async (req, res) => {
+  try {
+
+    const tokens = await Token.find({
+      user: req.user._id,
+    }).populate(
+      "queue",
+      "queueName location currentToken"
+    );
+
+    res.json(tokens);
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};
+
+exports.serveNextToken = async (req, res) => {
+  try {
+
+    const queue = await Queue.findById(
+      req.params.queueId
+    );
+
+    if (!queue) {
+
+      return res.status(404).json({
+        message: "Queue not found",
+      });
+
+    }
+
+    const nextToken = await Token.findOne({
+      queue: queue._id,
+      status: "waiting",
+    }).sort({ tokenNumber: 1 });
+
+    if (!nextToken) {
+
+      return res.json({
+        message: "No waiting tokens",
+      });
+
+    }
+
+    nextToken.status = "completed";
+
+    await nextToken.save();
+
+    queue.currentToken =
+      nextToken.tokenNumber;
+
+    queue.totalPeople -= 1;
+
+    await queue.save();
+
+    res.json(nextToken);
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};
+
+exports.cancelToken = async (req, res) => {
+  try {
+
+    const token = await Token.findById(
+      req.params.id
+    );
+
+    if (!token) {
+
+      return res.status(404).json({
+        message: "Token not found",
+      });
+
+    }
+
+    token.status = "cancelled";
+
+    await token.save();
+
+    res.json({
+      message: "Token cancelled",
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};
+
+exports.getTokenById = async (req, res) => {
+  try {
+
+    const token = await Token.findById(
+      req.params.id
+    )
+      .populate("user", "name email")
+      .populate(
+        "queue",
+        "queueName location currentToken"
+      );
+
+    if (token) {
+
+      res.json(token);
+
+    } else {
+
+      res.status(404).json({
+        message: "Token not found",
+      });
+
+    }
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+};
+
+exports.getQueueHistory = async (req, res) => {
+  try {
+
+    const tokens = await Token.find({
+      queue: req.params.queueId,
+    })
+      .populate("user", "name")
+      .sort({ createdAt: -1 });
+
+    res.json(tokens);
 
   } catch (error) {
 
