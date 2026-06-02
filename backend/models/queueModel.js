@@ -31,6 +31,11 @@ const queueSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    status:{
+      type:String,
+      enum:["open","closed","paused"],
+      default:"open",
+    },
   },
   {
     timestamps: true,
