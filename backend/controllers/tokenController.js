@@ -6,11 +6,17 @@ exports.joinQueue = async (req, res) => {
 
     const queue = await Queue.findById(req.params.queueId);
 
-    if (!queue) {
-      return res.status(404).json({
-        message: "Queue not found",
-      });
-    }
+   if (!queue) {
+  return res.status(404).json({
+    message: "Queue not found",
+  });
+}
+
+if (queue.status !== "open") {
+  return res.status(400).json({
+    message: "Queue is not open",
+  });
+}
 
     const existingToken = await Token.findOne({
       user: req.user._id,
