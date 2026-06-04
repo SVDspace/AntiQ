@@ -12,9 +12,9 @@ exports.joinQueue = async (req, res) => {
   });
 }
 
-if (queue.status !== "open") {
+if (queue.status === "closed" || queue.status === "paused") {
   return res.status(400).json({
-    message: "Queue is not open",
+    message: "Queue is currently unavailable",
   });
 }
 
@@ -127,6 +127,10 @@ exports.serveNextToken = async (req, res) => {
 
     queue.totalPeople -= 1;
 
+    if(queue.totalPeople <= 0){
+      queue.status = "closed";
+    }
+
     await queue.save();
 
     res.json(nextToken);
@@ -222,5 +226,52 @@ exports.getQueueHistory = async (req, res) => {
       error: error.message,
     });
 
+  }
+};
+
+exports.getWaitingTokens = async (req, res) => {
+  try {
+    const tokens = await Token.find({
+      queue: req.params.queueId,
+      status: "waiting",
+    })
+      .populate("user", "name")
+      .sort({ tokenNumber: 1 });
+
+    res.json(tokens);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+exports.getEstimatedTime = async (req, res) => {
+  try {
+    const token = await Token.findById(req.params.id).populate("queue");
+
+    if (!token) {
+      return res.status(404).json({
+        message: "Token not found",
+      });
+    }
+
+    const waitingBefore = await Token.countDocuments({
+      queue: token.queue._id,
+      status: "waiting",
+      tokenNumber: {
+        $lt: token.tokenNumber,
+      },
+    });
+
+    const estimatedTime = waitingBefore * token.queue.estimatedTimePerToken;
+
+    res.json({
+      estimatedTime,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
   }
 };
