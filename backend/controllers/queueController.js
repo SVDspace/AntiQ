@@ -1,4 +1,5 @@
 const Queue = require("../models/queueModel");
+const Token = require("../models/tokenModel");
 
 
 // CREATE QUEUE
@@ -195,15 +196,15 @@ exports.getQueueStats = async (req, res) => {
 };
 
 //Update queue status
-exports.reopenQueue = async(req,res)=>{
-  try{
+exports.reopenQueue = async (req, res) => {
+  try {
 
     const queue = await Queue.findById(req.params.id);
 
-    if(!queue){
+    if (!queue) {
 
       return res.status(404).json({
-        message:"Queue not found",
+        message: "Queue not found",
       });
     }
 
@@ -213,10 +214,128 @@ exports.reopenQueue = async(req,res)=>{
 
     res.json(queue);
   }
-  catch(error){
+  catch (error) {
 
     res.status(500).json({
-      error:error.message,
+      error: error.message,
+    });
+  }
+};
+
+//Update queue status API
+exports.updateQueueStatus = async (req, res) => {
+  try {
+    const queue = await Queue.findById(
+      req.params.id
+    );
+
+    if (!queue) {
+      return res.status(404).json({
+        message: "Queue not found",
+      });
+    }
+
+    queue.status =
+      req.body.status || queue.status;
+
+    await queue.save();
+
+    res.json(queue);
+
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+exports.getMyQueues = async (req, res) => {
+  try {
+    const queues = await Queue.find({
+      createdBy: req.user._id,
+    });
+
+    res.json(queues);
+
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+exports.searchQueues = async (req, res) => {
+  try {
+    const keyword = req.query.keyword
+      ? {
+          queueName: {
+            $regex: req.query.keyword,
+            $options: "i",
+          },
+        }
+      : {};
+
+    const queues = await Queue.find(keyword);
+
+    res.json(queues);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+exports.getQueueAnalytics = async (req, res) => {
+  try {
+    const totalTokens = await Token.countDocuments({
+      queue: req.params.id,
+    });
+
+    const completedTokens = await Token.countDocuments({
+      queue: req.params.id,
+      status: "completed",
+    });
+
+    const cancelledTokens = await Token.countDocuments({
+      queue: req.params.id,
+      status: "cancelled",
+    });
+
+    const waitingTokens = await Token.countDocuments({
+      queue: req.params.id,
+      status: "waiting",
+    });
+
+    res.json({
+      totalTokens,
+      completedTokens,
+      cancelledTokens,
+      waitingTokens,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+exports.reopenQueue = async (req, res) => {
+  try {
+    const queue = await Queue.findById(req.params.id);
+
+    if (!queue) {
+      return res.status(404).json({
+        message: "Queue not found",
+      });
+    }
+
+    queue.status = "open";
+    await queue.save();
+
+    res.json(queue);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
     });
   }
 };

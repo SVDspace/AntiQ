@@ -13,6 +13,8 @@ const {
   cancelToken,
   getTokenById,
   getQueueHistory,
+  getWaitingTokens,
+  getEstimatedTime,
 } = require("../controllers/tokenController");
 
 router.post("/:queueId", protect, joinQueue);
