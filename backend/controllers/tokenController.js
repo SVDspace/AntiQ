@@ -71,13 +71,21 @@ if (queue.status === "closed" || queue.status === "paused") {
 
 exports.getMyTokens = async (req, res) => {
   try {
+    
+  
+      console.log("User ID:", req.user._id);
 
     const tokens = await Token.find({
       user: req.user._id,
     }).populate(
       "queue",
       "queueName location currentToken"
-    );
+    )
+    .sort({
+      
+      createdAt: -1,
+
+    });
 
     res.json(tokens);
 
@@ -272,6 +280,35 @@ exports.getEstimatedTime = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       error: error.message,
+    });
+  }
+};
+
+exports.getQueueStats=
+async(req,res)=>{
+  try{
+    const waiting= await Token.countDocuments({
+      queue:req.params.queueId,
+      status:"waiting",
+    });
+     const completed= await Token.countDocuments({
+      queue:req.params.queueId,
+      status:"completed",
+    });
+     const cancelled= await Token.countDocuments({
+      queue:req.params.queueId,
+      status:"cancelled",
+    });
+
+    res.json({
+      waiting,
+      completed,cancelled,
+    });
+
+  }catch(error){
+    res.status(500).json({
+      error:
+      error.message,
     });
   }
 };

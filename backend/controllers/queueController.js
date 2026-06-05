@@ -94,6 +94,14 @@ exports.updateQueue = async (req, res) => {
     const queue = await Queue.findById(
       req.params.id
     );
+console.log("Queue owner:", queue.createdBy.toString());
+console.log("Current user:", req.user.id);
+     if(queue.createdBy.toString()!==req.user._id.toString())
+  {
+    return res.status(401).json({
+      message:"Not authorized",
+    });
+  }
 
     if (!queue) {
 
@@ -102,6 +110,8 @@ exports.updateQueue = async (req, res) => {
       });
 
     }
+
+   
 
     queue.queueName =
       req.body.queueName ||

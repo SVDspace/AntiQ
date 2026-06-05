@@ -21,8 +21,9 @@ router.post("/:queueId", protect, joinQueue);
 router.get("/my", protect, getMyTokens);
 router.put("/serve/:queueId", protect, admin, serveNextToken);
 router.put("/cancel/:id", protect, cancelToken);
-router.get("/:id", protect, getTokenById);
 router.get("/history/:queueId", protect, getQueueHistory);
+router.get("/waiting/:queueId", protect, getWaitingTokens);
+router.get("/:id", protect, getTokenById);
 
 module.exports = router;
 
