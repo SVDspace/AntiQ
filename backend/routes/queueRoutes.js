@@ -12,6 +12,7 @@ const {
   updateQueue,
   deleteQueue,
   getQueueStats,
+  getQueueStatus,
   updateQueueStatus,
   getMyQueues,
   searchQueues,
@@ -24,6 +25,16 @@ router.post("/", protect, createQueue);
 
 // Get all queues
 router.get("/", protect, getQueues);
+router.get(
+  "/search",
+  protect,
+  searchQueues
+);
+//Queue status
+router.get("/status/:id",protect,getQueueStatus);
+
+//Queue analytics
+router.get("/analytics",protect,getQueueAnalytics);
 
 // Queue stats
 router.get("/stats/:id", protect, getQueueStats);

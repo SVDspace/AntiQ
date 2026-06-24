@@ -2,7 +2,7 @@ const protect = require("../middleware/authMiddleware");
 const express = require("express");
 const router = express.Router();
 
-const { createUser, getUsers, loginUser, updateProfile, deleteProfile} = require("../controllers/userController");
+const { createUser, getUsers, loginUser, updateProfile, deleteProfile,getUserStats} = require("../controllers/userController");
 
 router.post("/login", loginUser);
 
@@ -16,7 +16,8 @@ router.get("/profile", protect, async (req, res) => {
   res.json(req.user);
 });
 
-module.exports = router;
-
+router.get("/stats", protect, getUserStats);
 router.put("/profile", protect, updateProfile);
 router.delete("/profile", protect, deleteProfile);
+module.exports = router;
+

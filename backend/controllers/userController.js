@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
+const Token = require("../models/tokenModel");
 
 // CREATE USER
 exports.createUser = async (req, res) => {
@@ -119,6 +120,58 @@ exports.deleteProfile = async (req, res) => {
 
     res.status(500).json({
       error: error.message,
+    });
+
+  }
+};
+exports.getUserStats =
+async (req, res) => {
+
+  try {
+
+    const totalTokens =
+      await Token.countDocuments({
+
+        user:
+          req.user._id,
+
+      });
+
+    const completed =
+      await Token.countDocuments({
+
+        user:
+          req.user._id,
+
+        status:
+          "completed",
+
+      });
+
+    const waiting =
+      await Token.countDocuments({
+
+        user:
+          req.user._id,
+
+        status:
+          "waiting",
+
+      });
+
+    res.json({
+
+      totalTokens,
+      completed,
+      waiting,
+
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      error:
+        error.message,
     });
 
   }
