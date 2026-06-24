@@ -157,6 +157,14 @@ exports.deleteQueue = async (req, res) => {
       });
 
     }
+    if (
+  queue.createdBy.toString() !==
+  req.user._id.toString()
+) {
+  return res.status(401).json({
+    message: "Not authorized",
+  });
+}
 
     await queue.deleteOne();
 
@@ -347,5 +355,84 @@ exports.reopenQueue = async (req, res) => {
     res.status(500).json({
       error: error.message,
     });
+  }
+};
+//Queue Status Controller
+exports.getQueueStatus = async (req, res) => {
+  try {
+    const queue = await Queue.findById(
+      req.params.id
+    );
+
+    if (!queue) {
+      return res.status(404).json({
+        message: "Queue not found",
+      });
+    }
+
+    const waiting =
+      await Token.countDocuments({
+        queue: queue._id,
+        status: "waiting",
+      });
+
+    res.json({
+      queueName: queue.queueName,
+      location: queue.location,
+      waitingTokens: waiting,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+exports.searchQueues = async (req, res) => {
+  try {
+    const keyword = req.query.keyword || "";
+
+    const queues = await Queue.find({
+      queueName: {
+        $regex: keyword,
+        $options: "i",
+      },
+    });
+
+    res.json(queues);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+exports.getQueueAnalytics =
+async (req, res) => {
+
+  try {
+
+    const totalQueues =
+      await Queue.countDocuments();
+
+    const queues =
+      await Queue.find();
+
+    res.json({
+
+      totalQueues,
+
+      queueList:
+        queues.length,
+
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      error:
+        error.message,
+    });
+
   }
 };
