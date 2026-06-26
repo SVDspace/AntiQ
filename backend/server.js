@@ -36,3 +36,16 @@ app.use("/api/queues", queueRoutes);
 
 const tokenRoutes = require("./routes/tokenRoutes");
 app.use("/api/tokens", tokenRoutes);
+
+app.get(
+  "/health",
+  (req, res) => {
+    res.json({
+      status:
+      "Server Running",
+    });
+  }
+);
+
+const errorHandler = require("./middleware/errorMiddleware");
+app.use(errorHandler);

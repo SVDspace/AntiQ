@@ -4,6 +4,17 @@ const router = express.Router();
 
 const protect = require("../middleware/authMiddleware");
 const admin = require("../middleware/adminMiddleware");
+const {
+  createQueueValidation,
+} = require(
+  "../middleware/queueValidation"
+);
+
+const {
+  validate,
+} = require(
+  "../middleware/validate"
+);
 
 const {
   createQueue,
@@ -21,7 +32,13 @@ const {
 } = require("../controllers/queueController");
 
 // Create queue
-router.post("/", protect, createQueue);
+router.post(
+  "/",
+  protect,
+  createQueueValidation,
+  validate,
+  createQueue
+);
 
 // Get all queues
 router.get("/", protect, getQueues);
@@ -31,10 +48,10 @@ router.get(
   searchQueues
 );
 //Queue status
-router.get("/status/:id",protect,getQueueStatus);
+router.get("/status/:id", protect, getQueueStatus);
 
 //Queue analytics
-router.get("/analytics",protect,getQueueAnalytics);
+router.get("/analytics", protect, getQueueAnalytics);
 
 // Queue stats
 router.get("/stats/:id", protect, getQueueStats);
