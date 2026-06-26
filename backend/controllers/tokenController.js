@@ -312,3 +312,43 @@ async(req,res)=>{
     });
   }
 };
+
+exports.getTokenAnalytics =
+async (req, res) => {
+
+  try {
+
+    const totalTokens =
+      await Token.countDocuments();
+
+    const waiting =
+      await Token.countDocuments({
+        status: "waiting",
+      });
+
+    const completed =
+      await Token.countDocuments({
+        status: "completed",
+      });
+
+    const cancelled =
+      await Token.countDocuments({
+        status: "cancelled",
+      });
+
+    res.json({
+      totalTokens,
+      waiting,
+      completed,
+      cancelled,
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message,
+    });
+
+  }
+
+};

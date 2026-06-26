@@ -4,14 +4,23 @@ const Token = require("../models/tokenModel");
 
 // CREATE QUEUE
 exports.createQueue = async (req, res) => {
-
   try {
+
+    const existingQueue = await Queue.findOne({
+      queueName: req.body.queueName,
+      createdBy: req.user._id,
+    });
+
+    if (existingQueue) {
+      return res.status(400).json({
+        message: "Queue already exists",
+      });
+    }
 
     const queue = await Queue.create({
       queueName: req.body.queueName,
       location: req.body.location,
-      estimatedTimePerToken:
-        req.body.estimatedTimePerToken,
+      estimatedTimePerToken: req.body.estimatedTimePerToken,
       createdBy: req.user._id,
     });
 
@@ -24,9 +33,7 @@ exports.createQueue = async (req, res) => {
     });
 
   }
-
 };
-
 
 // GET ALL QUEUES
 exports.getQueues = async (req, res) => {
