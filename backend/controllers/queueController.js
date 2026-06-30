@@ -95,45 +95,36 @@ exports.getQueueById = async (req, res) => {
 
 // UPDATE QUEUE
 exports.updateQueue = async (req, res) => {
-
   try {
 
-    const queue = await Queue.findById(
-      req.params.id
-    );
-console.log("Queue owner:", queue.createdBy.toString());
-console.log("Current user:", req.user.id);
-     if(queue.createdBy.toString()!==req.user._id.toString())
-  {
-    return res.status(401).json({
-      message:"Not authorized",
-    });
-  }
+    const queue = await Queue.findById(req.params.id);
 
     if (!queue) {
-
       return res.status(404).json({
         message: "Queue not found",
       });
-
     }
 
-   
+    if (queue.createdBy.toString() !== req.user._id.toString()) {
+      return res.status(401).json({
+        message: "Not authorized",
+      });
+    }
 
     queue.queueName =
-      req.body.queueName ||
-      queue.queueName;
+      req.body.queueName || queue.queueName;
 
     queue.location =
-      req.body.location ||
-      queue.location;
+      req.body.location || queue.location;
 
     queue.estimatedTimePerToken =
       req.body.estimatedTimePerToken ||
       queue.estimatedTimePerToken;
 
-    const updatedQueue =
-      await queue.save();
+    queue.status =
+      req.body.status || queue.status;
+
+    const updatedQueue = await queue.save();
 
     res.json(updatedQueue);
 
@@ -144,9 +135,7 @@ console.log("Current user:", req.user.id);
     });
 
   }
-
 };
-
 
 // DELETE QUEUE
 exports.deleteQueue = async (req, res) => {
