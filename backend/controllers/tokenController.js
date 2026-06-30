@@ -71,7 +71,6 @@ if (queue.status === "closed" || queue.status === "paused") {
 
 exports.getMyTokens = async (req, res) => {
   try {
-    
   
       console.log("User ID:", req.user._id);
 

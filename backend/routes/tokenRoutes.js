@@ -15,17 +15,19 @@ const {
   getQueueHistory,
   getWaitingTokens,
   getEstimatedTime,
+  getQueueStats,
   getTokenAnalytics,
 } = require("../controllers/tokenController");
 
-router.post("/:queueId", protect, joinQueue);
+router.post("/join/:queueId", protect, joinQueue);
 router.get("/my", protect, getMyTokens);
-router.put("/serve/:queueId", protect, admin, serveNextToken);
+router.get("/stats/:queueId", protect, getQueueStats);
+router.put("/serve/:queueId", protect, serveNextToken);
 router.put("/cancel/:id", protect, cancelToken);
 router.get("/history/:queueId", protect, getQueueHistory);
 router.get("/waiting/:queueId", protect, getWaitingTokens);
-router.get("/:id", protect, getTokenById);
 router.get("/analytics", protect, getTokenAnalytics);
+router.get("/:id", protect, getTokenById);
 
 module.exports = router;
 

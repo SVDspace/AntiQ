@@ -47,6 +47,14 @@ router.get(
   protect,
   searchQueues
 );
+
+//my queues
+router.get(
+  "/my",
+  protect,
+  getMyQueues
+);
+
 //Queue status
 router.get("/status/:id", protect, getQueueStatus);
 
