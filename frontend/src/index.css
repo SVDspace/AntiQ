@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  background-color: #2d3643;
+  color: white;
+  z-index: 1000;
+}
+
+.scroll-top-btn.visible {
+  display: block;
+}
+
+.faq-answer {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+  opacity: 0;
+  max-height: 0;
+}
+
+.faq-answer.open {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.fb-error {
+  color: #d32f2f;
+}
+
+.nav-links a,
+.footer-column a {
+  cursor: pointer;
+}
