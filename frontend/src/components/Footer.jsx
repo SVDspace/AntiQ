@@ -1,6 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const handleHowItWorks = () => {
+    navigate('/about');
+    setTimeout(() => {
+      const section = document.getElementById('working');
+      section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 220);
+  };
+
   return (
     <footer className="footer">
       <div className="container footer-grid">
@@ -37,7 +47,9 @@ function Footer() {
               <Link to="/about#why-choose">Why Choose AntiQ?</Link>
             </li>
             <li>
-              <Link to="/about#working">How it works?</Link>
+              <button type="button" className="footer-link-button" onClick={handleHowItWorks}>
+                How it works?
+              </button>
             </li>
           </ul>
         </div>

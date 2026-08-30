@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 
 const faqItems = [
   {
@@ -24,20 +24,7 @@ const faqItems = [
 ];
 
 function FAQs() {
-  useEffect(() => {
-    document.querySelectorAll('.faq-item').forEach((item) => {
-      item.querySelector('.faq-question').addEventListener('click', () => {
-        const answer = item.querySelector('.faq-answer');
-        const isOpen = answer.classList.contains('open');
-        document.querySelectorAll('.faq-answer').forEach((a) => {
-          a.classList.remove('open');
-        });
-        if (!isOpen) {
-          answer.classList.add('open');
-        }
-      });
-    });
-  }, []);
+  const [openFaq, setOpenFaq] = useState(faqItems[0].id);
 
   return (
     <main>
@@ -45,12 +32,23 @@ function FAQs() {
         <h1>Frequently Asked Questions</h1>
       </div>
       <div className="faq-container">
-        {faqItems.map((item) => (
-          <div className="faq-item" key={item.id}>
-            <div className="faq-question">{item.question}</div>
-            <div className="faq-answer">{item.answer}</div>
-          </div>
-        ))}
+        {faqItems.map((item) => {
+          const isOpen = openFaq === item.id;
+
+          return (
+            <div className="faq-item" key={item.id}>
+              <button
+                type="button"
+                className={`faq-question ${isOpen ? 'open' : ''}`}
+                onClick={() => setOpenFaq(isOpen ? '' : item.id)}
+                aria-expanded={isOpen}
+              >
+                {item.question}
+              </button>
+              <div className={`faq-answer ${isOpen ? 'open' : ''}`}>{item.answer}</div>
+            </div>
+          );
+        })}
       </div>
     </main>
   );

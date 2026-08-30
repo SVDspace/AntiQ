@@ -1,6 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleHowItWorksClick = () => {
+    navigate('/about');
+    setTimeout(() => {
+      const section = document.getElementById('working');
+      section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 220);
+  };
+
   return (
     <>
       <section className="hero">
@@ -14,9 +24,9 @@ function Home() {
             <Link to="/login" className="btn btn-primary">
               Get Started
             </Link>
-            <a href="#how-it-works" className="btn btn-outline">
+            <button type="button" className="btn btn-outline" onClick={handleHowItWorksClick}>
               How It Works
-            </a>
+            </button>
           </div>
         </div>
       </section>
