@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function About() {
   return (
     <main className="about-main">
@@ -76,9 +78,9 @@ function About() {
         <section className="cta-section">
           <div className="container">
             <p className="cta-intro animate-up">Ready to take the next step? Start your journey with us today and experience the difference AntiQ can make.</p>
-            <a href="/login" className="btn cta-btn">
+            <Link to="/login" className="btn btn-primary cta-btn">
               Get Started
-            </a>
+            </Link>
           </div>
         </section>
       </div>

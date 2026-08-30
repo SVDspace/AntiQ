@@ -1,89 +1,100 @@
+import { useEffect, useState } from 'react';
+import api from '../services/api.js';
+
 function BookToken() {
+  const [queues, setQueues] = useState([]);
+  const [selectedQueueId, setSelectedQueueId] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const fetchQueues = async () => {
+      const token = localStorage.getItem('antiq_token');
+      if (!token) {
+        setMessage('Please sign in before booking a queue token.');
+        return;
+      }
+
+      try {
+        const response = await api.get('/queues');
+        const list = Array.isArray(response.data) ? response.data : response.data.queues || [];
+        setQueues(list);
+        if (list.length > 0) {
+          setSelectedQueueId(list[0]._id || list[0].id || '');
+        }
+      } catch (error) {
+        setMessage(error.response?.data?.message || error.response?.data?.error || 'Unable to load available queues.');
+      }
+    };
+
+    fetchQueues();
+  }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!selectedQueueId) {
+      setMessage('Please select a queue first.');
+      return;
+    }
+
+    setLoading(true);
+    setMessage('');
+
+    try {
+      const response = await api.post(`/tokens/join/${selectedQueueId}`);
+      const tokenData = response.data || {};
+
+      setMessage(
+        `Token booked successfully. Your token number is ${tokenData.tokenNumber || 'N/A'} and estimated wait is ${tokenData.estimatedWaitTime || 0} minutes.`
+      );
+    } catch (error) {
+      setMessage(error.response?.data?.message || error.response?.data?.error || 'Booking failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="book-token-page">
       <div className="book-wrapper">
         <div className="token-form-card">
           <h2>Book Your Token</h2>
           <p className="form-sub">Reserve your spot in advance and avoid on-site waiting.</p>
-          <form>
-            <div className="grid-2">
-              <div className="field">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter full name" required />
-              </div>
-              <div className="field">
-                <label>Mobile Number</label>
-                <input type="tel" placeholder="Enter number" required />
-              </div>
-            </div>
+          <form onSubmit={handleSubmit}>
             <div className="field">
-              <label>Email</label>
-              <input type="email" placeholder="Optional" />
-            </div>
-            <div className="field">
-              <label>Select Location</label>
-              <select required>
-                <option value="">Choose location</option>
-                <option>Central Complex</option>
-                <option>North Center</option>
-                <option>Main Branch</option>
+              <label htmlFor="queueSelect">Select Queue</label>
+              <select
+                id="queueSelect"
+                value={selectedQueueId}
+                onChange={(event) => setSelectedQueueId(event.target.value)}
+                required
+              >
+                <option value="">Choose a queue</option>
+                {queues.map((queue) => (
+                  <option key={queue._id || queue.id} value={queue._id || queue.id}>
+                    {queue.queueName || queue.name} — {queue.location}
+                  </option>
+                ))}
               </select>
             </div>
-            <div className="field">
-              <label>Facility / Department</label>
-              <select required>
-                <option value="">Select facility</option>
-                <option>Hospital Wing</option>
-                <option>Office Counter</option>
-                <option>Service Desk</option>
-              </select>
-              <small className="hint">Where exactly you need to visit</small>
-            </div>
-            <div className="field">
-              <label>Service Type</label>
-              <select required>
-                <option value="">Select service</option>
-                <option>Consultation</option>
-                <option>Verification</option>
-                <option>Submission</option>
-                <option>Support</option>
-              </select>
-            </div>
-            <div className="grid-2">
-              <div className="field">
-                <label>Date</label>
-                <input type="date" required />
-              </div>
-              <div className="field">
-                <label>Time Slot</label>
-                <select required>
-                  <option>09:00 – 10:00</option>
-                  <option>10:00 – 11:00</option>
-                  <option>11:00 – 12:00</option>
-                  <option>12:00 – 01:00</option>
-                </select>
-              </div>
-            </div>
-            <div className="field">
-              <label>Additional Notes</label>
-              <textarea rows="3" placeholder="Optional"></textarea>
-            </div>
-            <button type="submit" className="btn-primary-token token-submit">
-              Confirm Booking
+
+            <button type="submit" className="btn-primary-token token-submit" disabled={loading || !selectedQueueId}>
+              {loading ? 'Booking...' : 'Confirm Booking'}
             </button>
+            {message && <p className="status-error" style={{ marginTop: '12px' }}>{message}</p>}
           </form>
         </div>
 
         <div className="token-info-card">
           <h3>How Booking Works</h3>
           <ul>
-            <li>Select your location</li>
-            <li>Choose department</li>
-            <li>Pick service type</li>
-            <li>Select date & slot</li>
-            <li>Get your token instantly</li>
+            <li>Select your queue</li>
+            <li>Confirm booking</li>
+            <li>Get your token number</li>
+            <li>Track live status</li>
           </ul>
-          <div className="info-box">Token priority is based on booking time and slot availability.</div>
+          <div className="info-box">Token priority is based on queue order and service waiting time.</div>
         </div>
       </div>
     </section>

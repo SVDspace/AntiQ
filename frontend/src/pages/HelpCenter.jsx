@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 function HelpCenter() {
   const sections = [
     {
@@ -54,6 +56,16 @@ function HelpCenter() {
     },
   ];
 
+  const [openItems, setOpenItems] = useState({});
+
+  const toggleItem = (sectionTitle, itemQuestion) => {
+    const key = `${sectionTitle}-${itemQuestion}`;
+    setOpenItems((current) => ({
+      ...current,
+      [key]: !current[key],
+    }));
+  };
+
   return (
     <main>
       <section className="hc-hero">
@@ -65,12 +77,24 @@ function HelpCenter() {
           <div key={section.title}>
             <h2 className="hc-section-title">{section.title}</h2>
             <div className="hc-faq">
-              {section.items.map((item, index) => (
-                <div key={index} className="hc-item">
-                  <div className="hc-question">{item.question}</div>
-                  <div className="hc-answer">{item.answer}</div>
-                </div>
-              ))}
+              {section.items.map((item, index) => {
+                const key = `${section.title}-${item.question}`;
+                const isOpen = !!openItems[key];
+
+                return (
+                  <div key={`${section.title}-${index}`} className={`hc-item ${isOpen ? 'open' : ''}`}>
+                    <button
+                      type="button"
+                      className="hc-question"
+                      onClick={() => toggleItem(section.title, item.question)}
+                      aria-expanded={isOpen}
+                    >
+                      {item.question}
+                    </button>
+                    <div className={`hc-answer ${isOpen ? 'open' : ''}`}>{item.answer}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}
