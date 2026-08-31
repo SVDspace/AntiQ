@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import NavBar from './components/NavBar.jsx';
+import { connectSocket, disconnectSocket } from './socket.js';
 import Footer from './components/Footer.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -57,6 +58,16 @@ function AppShell() {
 
     return () => timers.forEach((timer) => clearTimeout(timer));
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (localStorage.getItem('antiq_token')) {
+      connectSocket();
+    }
+
+    return () => {
+      disconnectSocket();
+    };
+  }, []);
 
   const toggleTheme = () => {
     setTheme((current) => (current === 'dark' ? 'light' : 'dark'));

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { disconnectSocket } from '../socket.js';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
@@ -21,6 +22,7 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem('antiq_token');
       localStorage.removeItem('antiq_user');
+      disconnectSocket();
       window.location.href = '/login';
     }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../services/api.js';
+import { connectSocket } from '../socket.js';
 
 function Login() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function Login() {
       const response = await api.post('/users/login', formData);
       localStorage.setItem('antiq_token', response.data.token);
       localStorage.setItem('antiq_user', JSON.stringify(response.data.user));
+      connectSocket();
       setMessage('Login successful');
       navigate('/');
     } catch (error) {

@@ -1,5 +1,6 @@
 const Token = require("../models/tokenModel");
 const Queue = require("../models/queueModel");
+const { emitQueueUpdate } = require("../socket");
 
 exports.joinQueue = async (req, res) => {
   try {
@@ -57,6 +58,12 @@ if (queue.status === "closed" || queue.status === "paused") {
     queue.totalPeople += 1;
 
     await queue.save();
+
+    emitQueueUpdate(queue._id, "queue:updated", {
+      action: "join",
+      token,
+      queue,
+    });
 
     res.status(201).json(token);
 
@@ -140,6 +147,12 @@ exports.serveNextToken = async (req, res) => {
 
     await queue.save();
 
+    emitQueueUpdate(queue._id, "queue:updated", {
+      action: "serve",
+      token: nextToken,
+      queue,
+    });
+
     res.json(nextToken);
 
   } catch (error) {
@@ -166,9 +179,19 @@ exports.cancelToken = async (req, res) => {
 
     }
 
+    const queue = await Queue.findById(token.queue);
+
     token.status = "cancelled";
 
     await token.save();
+
+    if (queue) {
+      emitQueueUpdate(queue._id, "queue:updated", {
+        action: "cancel",
+        token,
+        queue,
+      });
+    }
 
     res.json({
       message: "Token cancelled",
