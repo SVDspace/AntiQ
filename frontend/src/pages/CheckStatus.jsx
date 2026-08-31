@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../services/api.js';
+import { getSocket, joinQueueRoom, leaveQueueRoom } from '../socket.js';
 
 const getQueueName = (token) => {
   if (!token) return 'N/A';
@@ -16,29 +17,64 @@ function CheckStatus() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchUserTokens = async () => {
-      const token = localStorage.getItem('antiq_token');
-      if (!token) {
-        setError('Please sign in to check your queue status.');
-        return;
-      }
+  const fetchUserTokens = async () => {
+    const token = localStorage.getItem('antiq_token');
+    if (!token) {
+      setError('Please sign in to check your queue status.');
+      return;
+    }
 
-      try {
-        const response = await api.get('/tokens/my');
-        const tokens = Array.isArray(response.data) ? response.data : response.data.tokens || [];
-        setTokenList(tokens);
-        if (tokens.length > 0) {
-          setBookingId(tokens[0]._id || tokens[0].id || '');
-          setResult(tokens[0]);
-        }
-      } catch (fetchError) {
-        setError(fetchError.response?.data?.message || fetchError.response?.data?.error || 'Unable to load your queue status.');
+    try {
+      const response = await api.get('/tokens/my');
+      const tokens = Array.isArray(response.data) ? response.data : response.data.tokens || [];
+      setTokenList(tokens);
+      if (tokens.length > 0) {
+        setBookingId(tokens[0]._id || tokens[0].id || '');
+        setResult(tokens[0]);
+      }
+    } catch (fetchError) {
+      setError(fetchError.response?.data?.message || fetchError.response?.data?.error || 'Unable to load your queue status.');
+    }
+  };
+
+  useEffect(() => {
+    fetchUserTokens();
+  }, []);
+
+  useEffect(() => {
+    const queueIds = tokenList
+      .map((token) => token?.queue?._id || token?.queue || token?.queueId)
+      .filter(Boolean);
+
+    const uniqueQueueIds = [...new Set(queueIds.map((id) => String(id)))];
+
+    uniqueQueueIds.forEach((queueId) => joinQueueRoom(queueId));
+
+    return () => {
+      uniqueQueueIds.forEach((queueId) => leaveQueueRoom(queueId));
+    };
+  }, [tokenList]);
+
+  useEffect(() => {
+    const socket = getSocket();
+    const handleQueueUpdate = (payload) => {
+      if (!payload || !payload.queueId) return;
+      const queueIds = tokenList
+        .map((token) => token?.queue?._id || token?.queue || token?.queueId)
+        .filter(Boolean)
+        .map((id) => String(id));
+
+      if (queueIds.includes(String(payload.queueId))) {
+        fetchUserTokens();
       }
     };
 
-    fetchUserTokens();
-  }, []);
+    socket.on('queue:updated', handleQueueUpdate);
+
+    return () => {
+      socket.off('queue:updated', handleQueueUpdate);
+    };
+  }, [tokenList]);
 
   const handleCheck = async () => {
     const id = bookingId.trim();

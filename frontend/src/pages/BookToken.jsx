@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../services/api.js';
+import { getSocket, joinQueueRoom, leaveQueueRoom } from '../socket.js';
 
 function BookToken() {
   const [queues, setQueues] = useState([]);
@@ -19,7 +20,7 @@ function BookToken() {
         const response = await api.get('/queues');
         const list = Array.isArray(response.data) ? response.data : response.data.queues || [];
         setQueues(list);
-        if (list.length > 0) {
+        if (list.length > 0 && !selectedQueueId) {
           setSelectedQueueId(list[0]._id || list[0].id || '');
         }
       } catch (error) {
@@ -28,7 +29,32 @@ function BookToken() {
     };
 
     fetchQueues();
-  }, []);
+  }, [selectedQueueId]);
+
+  useEffect(() => {
+    if (!selectedQueueId) return undefined;
+
+    const socket = getSocket();
+    const handleQueueUpdate = async (payload) => {
+      if (!payload || String(payload.queueId) !== String(selectedQueueId)) return;
+
+      try {
+        const response = await api.get('/queues');
+        const list = Array.isArray(response.data) ? response.data : response.data.queues || [];
+        setQueues(list);
+      } catch (error) {
+        setMessage(error.response?.data?.message || error.response?.data?.error || 'Queue status updated.');
+      }
+    };
+
+    joinQueueRoom(selectedQueueId);
+    socket.on('queue:updated', handleQueueUpdate);
+
+    return () => {
+      socket.off('queue:updated', handleQueueUpdate);
+      leaveQueueRoom(selectedQueueId);
+    };
+  }, [selectedQueueId]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
